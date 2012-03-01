@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart showAxisY="true" showAxisX="true" colorAxisY="000000" plotVerticalLines="true">
+<set label="Колонка 1" value="19" color="3e5273" labelColor="3e5273"/>
+<set label="Колонка 2" value="41" color="2ca095" labelColor="2ca095"/>
+<set label="Колонка 3" value="101" color="566967" labelColor="566967"/>
+<set label="Колонка 4" value="81" color="016fad" labelColor="016fad"/>
+<set label="Колонка 5" value="125" color="47a939" labelColor="47a939"/>
+<set label="Колонка 6" value="244" color="336981" labelColor="336981"/>
+<set label="Колонка 7" value="511" color="b8a23d" labelColor="b8a23d"/>
+<set label="Колонка 8" value="234" color="3e5273" labelColor="3e5273"/>
+<set label="Колонка 9" value="255" color="2ca095" labelColor="2ca095"/>
+</chart> 
