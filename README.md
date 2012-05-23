@@ -1,4 +1,4 @@
-Bar Chart Standalone with animation
+Bar Chart Standalone with animation for IOS
 
 BarChart
 
