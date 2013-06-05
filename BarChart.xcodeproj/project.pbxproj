@@ -25,7 +25,6 @@
 		99A66CE8175F8C7400A17045 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A66CDC175F8C7400A17045 /* XMLParser.m */; };
 		99A66CE9175F8C7400A17045 /* XMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A66CDE175F8C7400A17045 /* XMLParserDelegate.m */; };
 		99A66CEA175F8C7400A17045 /* PlotChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A66CE0175F8C7400A17045 /* PlotChartView.m */; };
-		99A66CEF175FE59900A17045 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A66CEE175FE59900A17045 /* Crashlytics.framework */; };
 		99A66CF1175FF1AD00A17045 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A66CF0175FF1AD00A17045 /* QuartzCore.framework */; };
 		FA20611A14EBEF4200D4F642 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20611914EBEF4200D4F642 /* UIKit.framework */; };
 		FA20611C14EBEF4200D4F642 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20611B14EBEF4200D4F642 /* Foundation.framework */; };
@@ -67,7 +66,6 @@
 		99A66CDF175F8C7400A17045 /* PlotChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotChartView.h; sourceTree = "<group>"; };
 		99A66CE0175F8C7400A17045 /* PlotChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlotChartView.m; sourceTree = "<group>"; };
 		99A66CEC175FC9BA00A17045 /* BarTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarTypes.h; sourceTree = "<group>"; };
-		99A66CEE175FE59900A17045 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		99A66CF0175FF1AD00A17045 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FA20611514EBEF4200D4F642 /* BarChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA20611914EBEF4200D4F642 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -93,7 +91,6 @@
 				FA20611A14EBEF4200D4F642 /* UIKit.framework in Frameworks */,
 				FA20611C14EBEF4200D4F642 /* Foundation.framework in Frameworks */,
 				FA20611E14EBEF4200D4F642 /* CoreGraphics.framework in Frameworks */,
-				99A66CEF175FE59900A17045 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				99A66CF0175FF1AD00A17045 /* QuartzCore.framework */,
-				99A66CEE175FE59900A17045 /* Crashlytics.framework */,
 				FA20611914EBEF4200D4F642 /* UIKit.framework */,
 				FA20611B14EBEF4200D4F642 /* Foundation.framework */,
 				FA20611D14EBEF4200D4F642 /* CoreGraphics.framework */,
@@ -246,7 +242,6 @@
 			buildConfigurationList = FA20612D14EBEF4200D4F642 /* Build configuration list for PBXNativeTarget "BarChart" */;
 			buildPhases = (
 				99A4BFA9175ED18600DC4BF9 /* Increment Build */,
-				99A66CED175FE58000A17045 /* ShellScript */,
 				FA20611114EBEF4200D4F642 /* Sources */,
 				FA20611214EBEF4200D4F642 /* Frameworks */,
 				FA20611314EBEF4200D4F642 /* Resources */,
@@ -319,19 +314,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
 			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
-		};
-		99A66CED175FE58000A17045 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run c92fea94396caf3d64cac6cd0da71911f352c5eb";
 		};
 /* End PBXShellScriptBuildPhase section */
 
