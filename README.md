@@ -1,5 +1,5 @@
 # Bar Chart 
-![BarChart Icon](https://github.com/iRareMedia/BarChart/raw/master/BarChartIcon.png)A bar graphing standalone library with animation for iOS (Cocoa Touch). More documentation for this library is coming soon - along with a large amount of new features!
+<div style="float: right"><img width=100 src=https://github.com/iRareMedia/BarChart/raw/master/BarChartIcon.png/> </div>A bar graphing standalone library with animation for iOS (Cocoa Touch). More documentation for this library is coming soon - along with a large amount of new features!
 
 ## Interface
 ![Screenshot on iPad and iPhone](https://github.com/iRareMedia/BarChart/raw/master/Screenshot.png)
