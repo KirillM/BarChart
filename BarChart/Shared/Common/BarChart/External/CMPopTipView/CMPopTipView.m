@@ -26,7 +26,7 @@
 #import "CMPopTipView.h"
 
 @interface CMPopTipView ()
-@property (nonatomic, retain, readwrite)	id	targetObject;
+@property (nonatomic, strong, readwrite)	id	targetObject;
 @end
 
 
@@ -48,8 +48,7 @@
 	CGRect bubbleFrame;
 	if (pointDirection == PointDirectionUp) {
 		bubbleFrame = CGRectMake(2.0, targetPoint.y+pointerSize, bubbleSize.width, bubbleSize.height);
-	}
-	else {
+	} else {
 		bubbleFrame = CGRectMake(2.0, targetPoint.y-pointerSize-bubbleSize.height, bubbleSize.width, bubbleSize.height);
 	}
 	return bubbleFrame;
@@ -104,8 +103,7 @@
 							bubbleRect.origin.x+cornerRadius, bubbleRect.origin.y,
 							cornerRadius);
 		CGPathAddLineToPoint(bubblePath, NULL, targetPoint.x-pointerSize, targetPoint.y+pointerSize);
-	}
-	else {
+	} else {
 		CGPathMoveToPoint(bubblePath, NULL, targetPoint.x, targetPoint.y);
 		CGPathAddLineToPoint(bubblePath, NULL, targetPoint.x-pointerSize, targetPoint.y-pointerSize);
 		
@@ -167,8 +165,7 @@
 		green = components[0];
 		blue = components[0];
 		alpha = components[1];
-	}
-	else {
+	} else {
 		red = components[0];
 		green = components[1];
 		blue = components[2];
@@ -276,8 +273,7 @@
 	else*/ if (targetRelativeOrigin.y > containerRelativeOrigin.y+containerView.bounds.size.height) {
 		pointerY = containerView.bounds.size.height;
 		pointDirection = PointDirectionDown;
-	}
-	else {
+	} else {
 		CGPoint targetOriginInContainer = [targetView convertPoint:CGPointMake(0.0, 0.0) toView:containerView];
 		/*CGFloat sizeBelow = containerView.bounds.size.height - targetOriginInContainer.y;
 		if (sizeBelow > targetOriginInContainer.y) {
@@ -315,8 +311,7 @@
 	if (pointDirection == PointDirectionUp) {
 		y_b = topMargin + pointerY;
 		targetPoint = CGPointMake(x_p-x_b, 0);
-	}
-	else {
+	} else {
 		y_b = pointerY - fullHeight;
 		targetPoint = CGPointMake(x_p-x_b, fullHeight-2.0);
 	}
@@ -359,8 +354,7 @@
 			self.frame = finalFrame;
 			[UIView commitAnimations];
 		}
-	}
-	else {
+	} else {
 		// Not animated
 		[self setNeedsDisplay];
 		self.frame = finalFrame;
@@ -412,8 +406,7 @@
 		[UIView setAnimationDelegate:self];
 		[UIView setAnimationDidStopSelector:@selector(dismissAnimationDidStop:finished:context:)];
 		[UIView commitAnimations];
-	}
-	else {
+	} else {
 		[self finaliseDismiss];
 	}
 }
@@ -484,16 +477,6 @@
 	return self;
 }
 
-- (void)dealloc {
-	[backgroundColor release];
-    [customView release];
-	[message release];
-	[targetObject release];
-	[textColor release];
-	[textFont release];
-	
-    [super dealloc];
-}
 
 
 @end

@@ -26,8 +26,7 @@
 #import <Foundation/Foundation.h>
 #import "XMLElement.h"
 
-@interface XmlParserDelegate : NSObject <NSXMLParserDelegate>
-{
+@interface XmlParserDelegate : NSObject <NSXMLParserDelegate> {
 	XMLElement *root;
 	NSMutableArray *elementStack;
 }

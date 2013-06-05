@@ -1,7 +1,7 @@
 //
 //  BarChartView.m
 //
-//  Created by Mezrin Kirill on 17.02.12.
+//  Created by Mezrin Kirill on 17.02.12. Updated by iRare Media on June 4, 2013.
 //  Copyright (c) Mezrin Kirill 2012-2013.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,46 +24,32 @@
 //
 
 #import "BarChartView.h"
-#import "UIViewSizeShortcuts.h"
-#import "XMLParser.h"
-#import "UIColor+i7HexColor.h"
-#import "BarView.h"
-#import "BarLabel.h"
 
 @interface BarChartView() 
-- (void) setUp;
-- (void) setUpChart;
-- (void) calculateFrames;
+- (void)setUp;
+- (void)setUpChart;
+- (void)calculateFrames;
 @end
 
 @implementation BarChartView
 
-- (id) init
-{
+- (id)init {
 	self = [super init];
-	if (self) 
-	{
+	if (self)  {
 		[self setUp];
 	}
 	return self;
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
 	self = [super initWithFrame:frame];
-	if (self) 
-	{
+	if (self)  {
 		[self setUp];
 	}
 	return self;
 }
 
-- (void) setUp
-{	
-	[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
-	
+- (void)setUp {
 	self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	self.clipsToBounds = false;
 	self.backgroundColor = [UIColor colorWithHexString:@"e8ebee"];
@@ -75,7 +61,6 @@
 	plotChart.paddingBotom = PLOT_PADDING_BOTTOM;
 	plotChart.stepWidthAxisY = self.width/STROKE_AXIS_Y_SCALE;
 	[self addSubview:plotChart];
-	[plotChart release];
 	
 	plotView = [[UIView alloc] initWithFrame:CGRectZero];
 	//plotView.backgroundColor = [UIColor colorWithRed:220/255 green:220/255 blue:220/255 alpha:0.5];
@@ -83,59 +68,30 @@
 	plotView.clipsToBounds = true;
 	plotView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	[plotChart addSubview:plotView];
-	[plotView release];
 	
 	barViews = [[NSMutableArray alloc] initWithCapacity:0];
 	barLabels = [[NSMutableArray alloc] initWithCapacity:0];
 	chartDataArray = [[NSMutableArray alloc] initWithCapacity:0];
 }
 
-- (void) dealloc
-{
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	if (colorAxisY) [colorAxisY release];
-	[barViews release];
-	[barLabels release];
-	[chartDataArray release];
-	[super dealloc];
-}
-
-- (void) didRotate:(NSNotification *)notification
-{
-	static UIDeviceOrientation previousOrientation = -1;
-	
-	UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-
-	if (orientation != UIDeviceOrientationFaceUp && orientation != UIDeviceOrientationFaceDown && orientation != UIDeviceOrientationUnknown && previousOrientation != orientation)
-	{
-		[self performSelector:@selector(animateBars) withObject:NULL afterDelay:0.5];
-		previousOrientation = orientation;
-	}		
-}	
-
-- (void) setUpChart
-{	
+- (void)setUpChart {	
 	[self calculateFrames];
 	
 	NSUInteger _index = 0;
-	for (NSDictionary *barInfo in chartDataArray) 
-	{
+	for (NSDictionary *barInfo in chartDataArray)  {
 		BarView *bar = [[BarView alloc] initWithFrame:CGRectMake((barFullWidth - barWidth)/2 + _index*(barFullWidth),  plotView.height - roundf([[barInfo objectForKey:@"value"] floatValue]*barHeightRatio), barWidth, roundf([[barInfo objectForKey:@"value"] floatValue]*barHeightRatio))];
 		bar.cornerRadius = 10.0f;
 		bar.barValue = [[barInfo objectForKey:@"value"] floatValue];
 		bar.owner = self;
-		if (realMaxValue == [[barInfo objectForKey:@"value"] floatValue]) 
-		{
+		if (realMaxValue == [[barInfo objectForKey:@"value"] floatValue]) {
 			bar.special = true;
 		}
 		bar.backgroundColor = [UIColor clearColor];
 		bar.buttonColor = [barInfo objectForKey:@"color"];
 		[plotView addSubview:bar];
 		[barViews addObject:bar];
-		[bar release];
 		
-		if (showAxisX) 
-		{
+		if (showAxisX) {
 			BarLabel *barLabel = [[BarLabel alloc] initWithFrame:CGRectMake(roundf(plotView.left + _index*barFullWidth), plotChart.bottom - PLOT_PADDING_BOTTOM,roundf(barFullWidth), fontSize + PLOT_PADDING_BOTTOM)];
 			barLabel.textColor = [barInfo objectForKey:@"labelColor"];
 			barLabel.text =  [barInfo objectForKey:@"label"];
@@ -145,14 +101,12 @@
 			barLabel.backgroundColor = [UIColor clearColor];
 			[barLabels addObject:barLabel];
 			[self addSubview:barLabel];
-			[barLabel release];
 		}		 
 		_index++;
 	}
 }
 
-- (void) calculateFrames
-{
+- (void)calculateFrames {
 	CGSize maxStringSize = [[NSString stringWithFormat:@"%i", (int)maxValue] sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE]];
 	
 	if (showAxisY)
@@ -170,31 +124,24 @@
 	
 	barFullWidth = plotView.width/chartDataArray.count;
 	
-	if (barWidth > MAX_BAR_WIDTH) 
-	{
+	if (barWidth > MAX_BAR_WIDTH)  {
 		barWidth = MAX_BAR_WIDTH;
-	}
-	else
-	{
+	} else {
 		barWidth = barWidth;
 	}
 	
 	stepWidth = plotView.width/chartDataArray.count - MAX_BAR_WIDTH;
 	
-	if (stepWidth < 0.0f) 
-	{
+	if (stepWidth < 0.0f)  {
 		stepWidth = 0.0f;
-	}
-	else
-	{
+	} else {
 		stepWidth = stepWidth;
 	}
 	
 	[plotChart setNeedsDisplay];
 }
 
-- (void) setXmlData:(NSData *)xmlData
-{
+- (void)setXmlData:(NSData *)xmlData {
 	[chartDataArray removeAllObjects];
 	XMLElement *xml = [XMLParser parse:xmlData];
 	
@@ -202,24 +149,22 @@
 		return;
 	
 	NSMutableArray *barValues = [NSMutableArray arrayWithCapacity:0];
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	for (XMLElement *barElement in xml.children) 
-	{
-		NSDictionary *barInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-														 [barElement getAttribute:@"label"], @"label", 
-														 [NSNumber numberWithFloat:[[barElement getAttribute:@"value"] floatValue]], @"value", 
-														 [UIColor colorWithHexString:[barElement getAttribute:@"color"]], @"color", 
-														 [UIColor colorWithHexString:[barElement getAttribute:@"labelColor"]], @"labelColor", nil];
-		[chartDataArray addObject:barInfo];
-		[barValues addObject:[NSNumber numberWithFloat:[[barElement getAttribute:@"value"] floatValue]]];
+	@autoreleasepool {
+		for (XMLElement *barElement in xml.children) {
+			NSDictionary *barInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+															 [barElement getAttribute:@"label"], @"label", 
+															 [NSNumber numberWithFloat:[[barElement getAttribute:@"value"] floatValue]], @"value", 
+															 [UIColor colorWithHexString:[barElement getAttribute:@"color"]], @"color", 
+															 [UIColor colorWithHexString:[barElement getAttribute:@"labelColor"]], @"labelColor", nil];
+			[chartDataArray addObject:barInfo];
+			[barValues addObject:[NSNumber numberWithFloat:[[barElement getAttribute:@"value"] floatValue]]];
+		}
 	}
-	[pool release];
 	
 	maxValue = [[barValues valueForKeyPath:@"@max.floatValue"] floatValue] + [[barValues valueForKeyPath:@"@max.floatValue"] floatValue]*15/100;
 	realMaxValue = [[barValues valueForKeyPath:@"@max.floatValue"] floatValue];
 	maxValue = maxValue - fmodf(maxValue, STEP_AXIS_Y);
-	if (maxValue < realMaxValue) 
-	{
+	if (maxValue < realMaxValue)  {
 		maxValue = maxValue + STEP_AXIS_Y;
 	}
 	
@@ -227,11 +172,9 @@
 	showAxisX = [[xml getAttribute:@"showAxisX"] isEqualToString:@"true"];
 	plotVerticalLines = [[xml getAttribute:@"plotVerticalLines"] isEqualToString:@"true"];
 	
-	[colorAxisY release];
-	colorAxisY = [[UIColor colorWithHexString:[xml getAttribute:@"colorAxisY"]] retain];
+	colorAxisY = [UIColor colorWithHexString:[xml getAttribute:@"colorAxisY"]];
 	
-	if (showAxisX) 
-	{
+	if (showAxisX)  {
 		fontSize = FONT_SIZE;	
 	}
 	
@@ -253,39 +196,35 @@
 	[self setUpChart];
 }
 
-- (void) animateBars
-{
-	for (BarView *bar in barViews) 
-	{
+- (void)animateBars {
+	for (BarView *bar in barViews)  {
 		bar.bottom += bar.height;
 	}
 	
-	[UIView animateWithDuration:1.0 animations:^{
-		
-		NSUInteger _index = 0;
-		for (NSDictionary *barInfo in chartDataArray) 
-		{
-			BarView *bar = [barViews objectAtIndex:_index];
-			bar.frame = CGRectMake((barFullWidth - barWidth)/2 + _index*(barFullWidth),  plotView.height - roundf([[barInfo objectForKey:@"value"] floatValue]*barHeightRatio), barWidth, roundf([[barInfo objectForKey:@"value"] floatValue]*barHeightRatio));
-			_index++;
+	[UIView animateWithDuration:0.8 animations:^{
+		NSUInteger index = 0;
+		for (NSDictionary *barInfo in chartDataArray)  {
+			BarView *bar = [barViews objectAtIndex:index];
+			bar.frame = CGRectMake((barFullWidth - barWidth)/2 + index*(barFullWidth),
+                                   plotView.height - roundf([[barInfo objectForKey:@"value"] floatValue]*barHeightRatio),
+                                   barWidth,
+                                   roundf([[barInfo objectForKey:@"value"] floatValue]*barHeightRatio));
+			index++;
 		}
 	}];
 }
 
-- (void) layoutSubviews
-{
+- (void)layoutSubviews {
 	[super layoutSubviews];
 	
 	[self calculateFrames];
 	NSUInteger _index = 0;
-	for (NSDictionary *barInfo in chartDataArray) 
-	{
+	for (NSDictionary *barInfo in chartDataArray)  {
 		BarView *bar = [barViews objectAtIndex:_index];
 		bar.frame = CGRectMake((barFullWidth - barWidth)/2 + _index*(barFullWidth),  plotView.height - roundf([[barInfo objectForKey:@"value"] floatValue]*barHeightRatio), barWidth, roundf([[barInfo objectForKey:@"value"] floatValue]*barHeightRatio));
 		[bar setNeedsDisplay];
 		
-		if (showAxisX) 
-		{			
+		if (showAxisX) {			
 			BarLabel *barLabel = [barLabels objectAtIndex:_index];
 			barLabel.frame = CGRectMake(roundf(plotView.left + _index*barFullWidth), plotChart.bottom - PLOT_PADDING_BOTTOM,barFullWidth, fontSize + PLOT_PADDING_BOTTOM);
 		

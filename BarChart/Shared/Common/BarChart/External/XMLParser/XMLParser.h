@@ -26,8 +26,7 @@
 #import <Foundation/Foundation.h>
 #import "XMLElement.h"
 
-@interface XMLParser : NSObject 
-{
+@interface XMLParser : NSObject  {
 }
 
 + (XMLElement *) parse:(NSData *)data;

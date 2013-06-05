@@ -26,33 +26,28 @@
 #import "BarLabel.h"
 
 @interface BarLabel() 
-- (void) setUp;
+- (void)setUp;
 @end
 
 @implementation BarLabel
 
-- (id) init
-{
+- (id) init {
 	self = [super init];
-	if (self) 
-	{
+	if (self)  {
 		[self setUp];
 	}
 	return self;
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
 	self = [super initWithFrame:frame];
-	if (self) 
-	{
+	if (self)  {
 		[self setUp];
 	}
 	return self;
 }
 
-- (void) setUp
-{
+- (void)setUp {
 	self.backgroundColor = [UIColor clearColor];
 	self.textColor = [UIColor blackColor];
 	self.font = [UIFont boldSystemFontOfSize:13.0f];

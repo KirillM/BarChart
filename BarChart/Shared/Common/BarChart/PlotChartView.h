@@ -25,8 +25,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlotChartView : UIView
-{
+@interface PlotChartView : UIView {
 	CGFloat paddingTop;
 	CGFloat paddingBotom;
 	CGFloat stepValueAxisY;

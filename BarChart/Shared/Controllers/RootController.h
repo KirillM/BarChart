@@ -2,16 +2,15 @@
 //  RootController.h
 //  BarChart
 //
-//  Created by MacBook on 15.02.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Kirill Mezrin on 15.02.12. Updated by iRare Media on June 4, 2013
+//  Copyright (c) 2012 Kirill Mezrin. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "BarChartView.h"
 
 @interface RootController : UIViewController
-{
-	BarChartView *barChart;
-}
+
+@property (strong, nonatomic) IBOutlet BarChartView *barChart;
 
 @end

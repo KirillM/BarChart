@@ -29,24 +29,19 @@
 
 @synthesize root;
 
-- (void) parserDidStartDocument:(NSXMLParser *)parser
-{
+- (void)parserDidStartDocument:(NSXMLParser *)parser {
 	elementStack = [[NSMutableArray alloc] init];
 }
 
-- (void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName 
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName 
 	 namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName 
-	 attributes:(NSDictionary *)attributeDict
-{
-	if ( [elementStack count] == 0 )
-	{
+	 attributes:(NSDictionary *)attributeDict {
+	if ( [elementStack count] == 0 ) {
 		root = [[XMLElement alloc] init];
 		root.name = elementName;
 		[root.attributes addEntriesFromDictionary:attributeDict];
 		[elementStack addObject:self.root];
-	}
-	else
-	{
+	} else {
 		XMLElement *el = [[elementStack lastObject] appendElement:elementName];
 		[el.attributes addEntriesFromDictionary:attributeDict];
 		[elementStack addObject:el];
@@ -54,24 +49,16 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName 
-	namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{     
+	namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {     
 	if ( [elementStack count] > 0 )
 		[elementStack removeLastObject];
 }
 
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
-{
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
 	XMLElement *el = [elementStack lastObject];
 	if ( el != nil )
 		el.innerText = [el.innerText stringByAppendingString:string];
 }
 
-- (void) dealloc
-{
-	[root release];
-	[elementStack release];
-	[super dealloc];
-}
 
 @end

@@ -1,7 +1,7 @@
 //
 //  BarChartView.h
 //
-//  Created by Mezrin Kirill on 17.02.12.
+//  Created by Mezrin Kirill on 17.02.12. Updated by iRare Media on June 4, 2013.
 //  Copyright (c) Mezrin Kirill 2012-2013.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,9 +32,13 @@
 
 #import <UIKit/UIKit.h>
 #import "PlotChartView.h"
+#import "UIViewSizeShortcuts.h"
+#import "XMLParser.h"
+#import "UIColor+i7HexColor.h"
+#import "BarView.h"
+#import "BarLabel.h"
 
-@interface BarChartView : UIView
-{
+@interface BarChartView : UIView {
 	PlotChartView *plotChart;
 	UIView *plotView;
 	
@@ -60,6 +64,7 @@
 	CGFloat fontSize;
 }
 
-- (void) setXmlData:(NSData *)xmlData;
+- (void)setXmlData:(NSData *)xmlData;
+
 
 @end

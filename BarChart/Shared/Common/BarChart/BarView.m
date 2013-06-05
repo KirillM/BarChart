@@ -27,7 +27,7 @@
 
 @interface BarView() 
 
-- (void) setUp;
+- (void)setUp;
 
 @end
 
@@ -45,60 +45,46 @@
 #pragma mark -
 #pragma mark Initialization and teardown
 
-- (id) init
-{
+- (id) init {
 	self = [super init];
-	if (self) 
-	{
+	if (self)  {
 		[self setUp];
 	}
 	return self;
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
 	self = [super initWithFrame:frame];
-	if (self) 
-	{
+	if (self)  {
 		[self setUp];
 	}
 	return self;
 }
 
-- (void) setUp
-{
+- (void)setUp {
 	self.autoresizingMask =  UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
-- (void) didRotate:(NSNotification *)notification
-{ 
+- (void)didRotate:(NSNotification *)notification { 
 	UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-	if (orientation != UIDeviceOrientationFaceUp && orientation != UIDeviceOrientationFaceDown && orientation != UIDeviceOrientationUnknown)
-	{
+	if (orientation != UIDeviceOrientationFaceUp && orientation != UIDeviceOrientationFaceDown && orientation != UIDeviceOrientationUnknown) {
 		if (popTipView != nil) 
 		{
 			[popTipView dismissAnimated:false];
-			[popTipView release];
 			popTipView = nil;
 			return;
 		}
 	}	
 }
 
-- (void)dealloc 
-{
+- (void)dealloc  {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[buttonColor release];
-	[super dealloc];
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-	if (popTipView != nil) 
-	{
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+	if (popTipView != nil)  {
 		[popTipView dismissAnimated:true];
-		[popTipView release];
 		popTipView = nil;
 		return;
 	}
@@ -113,7 +99,6 @@
 	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 2.0 * NSEC_PER_SEC);
 	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
 		[popTipView dismissAnimated:true];
-		[popTipView release];
 		popTipView = nil;
 	});
 }
@@ -121,8 +106,7 @@
 #pragma mark -
 #pragma mark Drawing methods
 
-- (void)drawRect:(CGRect)rect 
-{
+- (void)drawRect:(CGRect)rect  {
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	CGRect currentBounds = self.bounds;
 	// First, draw the rounded rectangle for the button fill color
@@ -173,8 +157,7 @@
 	
 	CGContextBeginPath(context);
 	
-	if (self.special) 
-	{
+	if (self.special)  {
 		CGContextMoveToPoint(context, CGRectGetMinX(glossRect) + glossCornerRadius, CGRectGetMinY(glossRect));
 		CGContextAddArc(context, CGRectGetMaxX(glossRect) - glossCornerRadius, CGRectGetMinY(glossRect) + glossCornerRadius, glossCornerRadius, 3 * M_PI / 2, 0, 0);
 		
@@ -183,9 +166,7 @@
 		
 		CGContextAddLineToPoint(context, CGRectGetMinX(glossRect), CGRectGetMinY(glossRect) - cornerRadius);
 		CGContextAddArc(context, CGRectGetMinX(glossRect) + glossCornerRadius, CGRectGetMinY(glossRect) + glossCornerRadius, glossCornerRadius, M_PI, 3 * M_PI / 2, 0);
-	}
-	else
-	{
+	} else {
 		CGContextMoveToPoint(context, CGRectGetMidX(glossRect), CGRectGetMinY(glossRect));
 		CGContextAddLineToPoint(context, CGRectGetMidX(glossRect), CGRectGetMaxY(glossRect));
 		CGContextAddLineToPoint(context, CGRectGetMinX(glossRect), CGRectGetMaxY(glossRect));

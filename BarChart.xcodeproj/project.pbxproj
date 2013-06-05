@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99A4BFA4175EA8C700DC4BF9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99A4BFA3175EA8C700DC4BF9 /* Default-568h@2x.png */; };
+		99A4BFA6175EA8E000DC4BF9 /* Storyboard-iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99A4BFA5175EA8E000DC4BF9 /* Storyboard-iPhone.storyboard */; };
+		99A4BFA8175ED06000DC4BF9 /* Storyboard-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99A4BFA7175ED06000DC4BF9 /* Storyboard-iPad.storyboard */; };
+		99A4BFC0175ED58300DC4BF9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 99A4BFBF175ED58300DC4BF9 /* Icon.png */; };
+		99A4BFC2175ED58600DC4BF9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99A4BFC1175ED58600DC4BF9 /* Icon@2x.png */; };
+		99A4BFC4175ED58D00DC4BF9 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 99A4BFC3175ED58D00DC4BF9 /* Icon-72.png */; };
+		99A4BFC6175ED59000DC4BF9 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99A4BFC5175ED59000DC4BF9 /* Icon-72@2x.png */; };
 		FA20611A14EBEF4200D4F642 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20611914EBEF4200D4F642 /* UIKit.framework */; };
 		FA20611C14EBEF4200D4F642 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20611B14EBEF4200D4F642 /* Foundation.framework */; };
 		FA20611E14EBEF4200D4F642 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20611D14EBEF4200D4F642 /* CoreGraphics.framework */; };
@@ -28,6 +35,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		99A4BFA3175EA8C700DC4BF9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		99A4BFA5175EA8E000DC4BF9 /* Storyboard-iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Storyboard-iPhone.storyboard"; sourceTree = "<group>"; };
+		99A4BFA7175ED06000DC4BF9 /* Storyboard-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Storyboard-iPad.storyboard"; sourceTree = "<group>"; };
+		99A4BFBF175ED58300DC4BF9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		99A4BFC1175ED58600DC4BF9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		99A4BFC3175ED58D00DC4BF9 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		99A4BFC5175ED59000DC4BF9 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		FA20611514EBEF4200D4F642 /* BarChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA20611914EBEF4200D4F642 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FA20611B14EBEF4200D4F642 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -54,13 +68,13 @@
 		FAAFB6D414EEB60500AAD768 /* UIColor+i7HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+i7HexColor.m"; path = "Shared/Common/BarChart/External/Helpers/UIColor+i7HexColor.m"; sourceTree = "<group>"; };
 		FAAFB6D514EEB60500AAD768 /* UIColor+i7HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+i7HexColor.h"; path = "Shared/Common/BarChart/External/Helpers/UIColor+i7HexColor.h"; sourceTree = "<group>"; };
 		FAAFB6D814EEB61C00AAD768 /* PlotChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlotChartView.m; path = Shared/Common/BarChart/PlotChartView.m; sourceTree = "<group>"; };
-		FAAFB6D914EEB61C00AAD768 /* PlotChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; name = PlotChartView.h; path = Shared/Common/BarChart/PlotChartView.h; sourceTree = "<group>"; };
+		FAAFB6D914EEB61C00AAD768 /* PlotChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlotChartView.h; path = Shared/Common/BarChart/PlotChartView.h; sourceTree = "<group>"; };
 		FAAFB6DA14EEB61C00AAD768 /* BarLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarLabel.m; path = Shared/Common/BarChart/BarLabel.m; sourceTree = "<group>"; };
 		FAAFB6DB14EEB61C00AAD768 /* BarLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarLabel.h; path = Shared/Common/BarChart/BarLabel.h; sourceTree = "<group>"; };
 		FAAFB6DC14EEB61C00AAD768 /* BarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarChartView.m; path = Shared/Common/BarChart/BarChartView.m; sourceTree = "<group>"; };
-		FAAFB6DD14EEB61C00AAD768 /* BarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; name = BarChartView.h; path = Shared/Common/BarChart/BarChartView.h; sourceTree = "<group>"; };
+		FAAFB6DD14EEB61C00AAD768 /* BarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarChartView.h; path = Shared/Common/BarChart/BarChartView.h; sourceTree = "<group>"; };
 		FAAFB6DE14EEB61C00AAD768 /* BarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarView.m; path = Shared/Common/BarChart/BarView.m; sourceTree = "<group>"; };
-		FAAFB6DF14EEB61C00AAD768 /* BarView.h */ = {isa = PBXFileReference; fileEncoding = 4; name = BarView.h; path = Shared/Common/BarChart/BarView.h; sourceTree = "<group>"; };
+		FAAFB6DF14EEB61C00AAD768 /* BarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarView.h; path = Shared/Common/BarChart/BarView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +91,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99A4BFC7175ED5B500DC4BF9 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				99A4BFC5175ED59000DC4BF9 /* Icon-72@2x.png */,
+				99A4BFC3175ED58D00DC4BF9 /* Icon-72.png */,
+				99A4BFC1175ED58600DC4BF9 /* Icon@2x.png */,
+				99A4BFBF175ED58300DC4BF9 /* Icon.png */,
+				99A4BFA3175EA8C700DC4BF9 /* Default-568h@2x.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
 		FA20610A14EBEF4100D4F642 = {
 			isa = PBXGroup;
 			children = (
+				99A4BFC7175ED5B500DC4BF9 /* Icons */,
 				FA20611F14EBEF4200D4F642 /* BarChart */,
 				FA20611814EBEF4200D4F642 /* Frameworks */,
 				FA20611614EBEF4200D4F642 /* Products */,
@@ -107,9 +134,14 @@
 		FA20611F14EBEF4200D4F642 /* BarChart */ = {
 			isa = PBXGroup;
 			children = (
-				FA56663314EBFF68006BBF89 /* Shared */,
+				FAAFB6C114EEB5AB00AAD768 /* BarChart Library */,
+				FA56665314EC1AE0006BBF89 /* BarChart Data */,
 				FA20612814EBEF4200D4F642 /* AppDelegate.h */,
 				FA20612914EBEF4200D4F642 /* AppDelegate.m */,
+				99A4BFA5175EA8E000DC4BF9 /* Storyboard-iPhone.storyboard */,
+				99A4BFA7175ED06000DC4BF9 /* Storyboard-iPad.storyboard */,
+				FA56664914EBFFF5006BBF89 /* RootController.h */,
+				FA56664A14EBFFF5006BBF89 /* RootController.m */,
 				FA20612014EBEF4200D4F642 /* Supporting Files */,
 			);
 			path = BarChart;
@@ -126,55 +158,28 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FA56663314EBFF68006BBF89 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				FA56665314EC1AE0006BBF89 /* Data */,
-				FA56663714EBFF80006BBF89 /* Common */,
-				FA56663514EBFF72006BBF89 /* Controllers */,
-			);
-			name = Shared;
-			sourceTree = "<group>";
-		};
-		FA56663514EBFF72006BBF89 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				FA56664914EBFFF5006BBF89 /* RootController.h */,
-				FA56664A14EBFFF5006BBF89 /* RootController.m */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
-		FA56663714EBFF80006BBF89 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				FAAFB6C114EEB5AB00AAD768 /* BarChart */,
-			);
-			name = Common;
-			sourceTree = "<group>";
-		};
-		FA56665314EC1AE0006BBF89 /* Data */ = {
+		FA56665314EC1AE0006BBF89 /* BarChart Data */ = {
 			isa = PBXGroup;
 			children = (
 				FA56665414EC1E65006BBF89 /* barChart.xml */,
 			);
-			name = Data;
+			name = "BarChart Data";
 			sourceTree = "<group>";
 		};
-		FAAFB6C114EEB5AB00AAD768 /* BarChart */ = {
+		FAAFB6C114EEB5AB00AAD768 /* BarChart Library */ = {
 			isa = PBXGroup;
 			children = (
-				FAAFB6D814EEB61C00AAD768 /* PlotChartView.m */,
 				FAAFB6D914EEB61C00AAD768 /* PlotChartView.h */,
-				FAAFB6DA14EEB61C00AAD768 /* BarLabel.m */,
+				FAAFB6D814EEB61C00AAD768 /* PlotChartView.m */,
 				FAAFB6DB14EEB61C00AAD768 /* BarLabel.h */,
-				FAAFB6DC14EEB61C00AAD768 /* BarChartView.m */,
+				FAAFB6DA14EEB61C00AAD768 /* BarLabel.m */,
 				FAAFB6DD14EEB61C00AAD768 /* BarChartView.h */,
-				FAAFB6DE14EEB61C00AAD768 /* BarView.m */,
+				FAAFB6DC14EEB61C00AAD768 /* BarChartView.m */,
 				FAAFB6DF14EEB61C00AAD768 /* BarView.h */,
+				FAAFB6DE14EEB61C00AAD768 /* BarView.m */,
 				FAAFB6C214EEB5B800AAD768 /* External */,
 			);
-			name = BarChart;
+			name = "BarChart Library";
 			sourceTree = "<group>";
 		};
 		FAAFB6C214EEB5B800AAD768 /* External */ = {
@@ -190,8 +195,8 @@
 		FAAFB6C314EEB5C400AAD768 /* CMPopTipView */ = {
 			isa = PBXGroup;
 			children = (
-				FAAFB6C614EEB5ED00AAD768 /* CMPopTipView.m */,
 				FAAFB6C714EEB5ED00AAD768 /* CMPopTipView.h */,
+				FAAFB6C614EEB5ED00AAD768 /* CMPopTipView.m */,
 			);
 			name = CMPopTipView;
 			sourceTree = "<group>";
@@ -199,12 +204,12 @@
 		FAAFB6C414EEB5D200AAD768 /* XMLParser */ = {
 			isa = PBXGroup;
 			children = (
-				FAAFB6C914EEB5FB00AAD768 /* XMLParserDelegate.m */,
 				FAAFB6CA14EEB5FB00AAD768 /* XMLParserDelegate.h */,
-				FAAFB6CB14EEB5FB00AAD768 /* XMLParser.m */,
+				FAAFB6C914EEB5FB00AAD768 /* XMLParserDelegate.m */,
 				FAAFB6CC14EEB5FB00AAD768 /* XMLParser.h */,
-				FAAFB6CD14EEB5FB00AAD768 /* XMLElement.m */,
+				FAAFB6CB14EEB5FB00AAD768 /* XMLParser.m */,
 				FAAFB6CE14EEB5FB00AAD768 /* XMLElement.h */,
+				FAAFB6CD14EEB5FB00AAD768 /* XMLElement.m */,
 			);
 			name = XMLParser;
 			sourceTree = "<group>";
@@ -212,10 +217,10 @@
 		FAAFB6C514EEB5DD00AAD768 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				FAAFB6D214EEB60500AAD768 /* UIViewSizeShortcuts.m */,
 				FAAFB6D314EEB60500AAD768 /* UIViewSizeShortcuts.h */,
-				FAAFB6D414EEB60500AAD768 /* UIColor+i7HexColor.m */,
+				FAAFB6D214EEB60500AAD768 /* UIViewSizeShortcuts.m */,
 				FAAFB6D514EEB60500AAD768 /* UIColor+i7HexColor.h */,
+				FAAFB6D414EEB60500AAD768 /* UIColor+i7HexColor.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA20612D14EBEF4200D4F642 /* Build configuration list for PBXNativeTarget "BarChart" */;
 			buildPhases = (
+				99A4BFA9175ED18600DC4BF9 /* ShellScript */,
 				FA20611114EBEF4200D4F642 /* Sources */,
 				FA20611214EBEF4200D4F642 /* Frameworks */,
 				FA20611314EBEF4200D4F642 /* Resources */,
@@ -272,10 +278,33 @@
 			files = (
 				FA20612414EBEF4200D4F642 /* InfoPlist.strings in Resources */,
 				FA56665514EC1E65006BBF89 /* barChart.xml in Resources */,
+				99A4BFA4175EA8C700DC4BF9 /* Default-568h@2x.png in Resources */,
+				99A4BFA6175EA8E000DC4BF9 /* Storyboard-iPhone.storyboard in Resources */,
+				99A4BFA8175ED06000DC4BF9 /* Storyboard-iPad.storyboard in Resources */,
+				99A4BFC0175ED58300DC4BF9 /* Icon.png in Resources */,
+				99A4BFC2175ED58600DC4BF9 /* Icon@2x.png in Resources */,
+				99A4BFC4175ED58D00DC4BF9 /* Icon-72.png in Resources */,
+				99A4BFC6175ED59000DC4BF9 /* Icon-72@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		99A4BFA9175ED18600DC4BF9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA20611114EBEF4200D4F642 /* Sources */ = {
@@ -366,14 +395,13 @@
 		FA20612E14EBEF4200D4F642 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BarChart/BarChart-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "BarChart/BarChart-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -382,14 +410,13 @@
 		FA20612F14EBEF4200D4F642 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BarChart/BarChart-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "BarChart/BarChart-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

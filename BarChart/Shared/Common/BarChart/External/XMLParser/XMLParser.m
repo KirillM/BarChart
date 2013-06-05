@@ -28,15 +28,12 @@
 
 @implementation XMLParser
 
-+ (XMLElement *) parse:(NSData *)data
-{
++ (XMLElement *) parse:(NSData *)data {
 	XmlParserDelegate *parserDelegate = [[XmlParserDelegate alloc] init];
 	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
 	[parser setDelegate:parserDelegate];
 	[parser parse];
-	[parser release];
-	XMLElement *root = [[[parserDelegate root] retain] autorelease];
-	[parserDelegate release];
+	XMLElement *root = [parserDelegate root];
 	return root;
 }
 

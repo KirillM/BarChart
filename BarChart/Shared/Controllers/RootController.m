@@ -2,38 +2,28 @@
 //  RootController.m
 //  BarChart
 //
-//  Created by MacBook on 15.02.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Kirill Mezrin on 15.02.12. Updated by iRare Media on June 4, 2013
+//  Copyright (c) 2012 Kirill Mezrin. All rights reserved.
 //
 
 #import "RootController.h"
 #import "UIViewSizeShortcuts.h"
 
 @implementation RootController
+@synthesize barChart;
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
 	[super viewDidLoad];
-	self.view.backgroundColor = [UIColor whiteColor];
-	
-	barChart = [[BarChartView alloc] initWithFrame:CGRectMake(40.0f, 40.0f, self.view.width - 80.0f, self.view.height - 80.0f)];
+	barChart = [[BarChartView alloc] initWithFrame:self.barChart.frame];
 	[barChart setXmlData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"barChart" ofType:@"xml"]]];
 	[self.view addSubview:barChart];
-	[barChart release];
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
+    [self setBarChart:nil];
 	[super viewDidUnload];
-}
-
-#pragma mark - Rotations
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-	return YES;
 }
 
 @end

@@ -26,8 +26,7 @@
 #import <UIKit/UIKit.h>
 #import "CMPopTipView.h"
 
-@interface BarView : UIButton
-{
+@interface BarView : UIButton {
 	CGFloat barValue;
 	CGFloat cornerRadius;
 	UIColor *buttonColor;
@@ -35,9 +34,9 @@
 }
 
 @property (nonatomic, assign) BOOL special;
-@property (nonatomic, assign) id owner;
+@property (nonatomic, unsafe_unretained) id owner;
 @property (nonatomic, assign) CGFloat barValue;
 @property (readwrite, nonatomic) CGFloat cornerRadius;
-@property (readwrite, retain, nonatomic) UIColor *buttonColor;
+@property (readwrite, strong, nonatomic) UIColor *buttonColor;
 
 @end
