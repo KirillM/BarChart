@@ -1,5 +1,5 @@
 # Bar Chart 
-<div style="float: right"><img width=100 src=https://github.com/iRareMedia/BarChart/raw/master/BarChartIcon.png/> </div>A bar graphing standalone library with animation for iOS (Cocoa Touch). More documentation for this library is coming soon - along with a large amount of new features!
+<img width=100 src=https://github.com/iRareMedia/BarChart/raw/master/BarChartIcon.png/> A bar graphing standalone library with animation for iOS (Cocoa Touch). More documentation for this library is coming soon - along with a large amount of new features!
 
 ## Interface
 ![Screenshot on iPad and iPhone](https://github.com/iRareMedia/BarChart/raw/master/Screenshot.png)
@@ -17,7 +17,7 @@ Before using Bar Chart, make sure your project meets its requirements.
   <tr>
     <td>This update makes large improvements to the performance of code by converting the project to Objective-C ARC.  </br> 
     <ul>
-   <li>Converted project to ARC. If your project does not use ARC, add the ARC flag to the **Bar Chart** files in your project's Compile Sources section: `-fobjc-arc`.</li>
+   <li>Converted project to ARC. If your project does not use ARC, add the ARC flag to the <b>Bar Chart</b> files in your project's Compile Sources section: <tt>-fobjc-arc</tt>.</li>
     <li>Improved the demo app. The demo app now runs on iPhone 5 and iOS 5 or higher. It also begins the transition to a more interface based Bar Chart integration system.</li>
     <li>Code cleanup and reorganization to make it easier on the eyes.</li>
     <li>Project now compiles with ARMV7 and ARMV7S instead of ARMV6</li>
