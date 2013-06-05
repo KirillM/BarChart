@@ -24,7 +24,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "CMPopTipView.h"
+#import "BarTypes.h"
 
 @interface BarView : UIButton {
 	CGFloat barValue;
@@ -34,9 +36,16 @@
 }
 
 @property (nonatomic, assign) BOOL special;
-@property (nonatomic, unsafe_unretained) id owner;
+@property (nonatomic, weak) id owner;
 @property (nonatomic, assign) CGFloat barValue;
 @property (readwrite, nonatomic) CGFloat cornerRadius;
 @property (readwrite, strong, nonatomic) UIColor *buttonColor;
+@property (assign) BarDisplayStyle barViewDisplayStyle;
+@property (assign) BarShape barViewShape;
+@property (assign) BarShadow barViewShadow;
+
+- (void)setupBarStyle:(BarDisplayStyle)displayStyle;
+- (void)setupBarShape:(BarShape)shape;
+- (void)setupBarShadow:(BarShadow)shadow;
 
 @end

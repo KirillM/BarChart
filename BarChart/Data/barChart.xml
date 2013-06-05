@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chart showAxisY="true" showAxisX="true" colorAxisY="000000" plotVerticalLines="false">
+<chart>
 <set label="T1" value="19" color="3e5273" labelColor="3e5273"/>
 <set label="T2" value="41" color="F0230C" labelColor="F0230C"/>
 <set label="T3" value="101" color="566967" labelColor="566967"/>

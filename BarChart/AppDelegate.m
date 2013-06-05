@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  BarChart
 //
-//  Created by Kirill Mezrin on 15.02.12. Updated by iRare Media on June 4, 2013
+//  Created by Kirill Mezrin on 15.02.12. Updated by iRare Media on June 5, 2013
 //  Copyright (c) 2012 Kirill Mezrin. All rights reserved.
 //
 
@@ -13,6 +13,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //Override point for customization after application launch.
+    [Crashlytics startWithAPIKey:@"c92fea94396caf3d64cac6cd0da71911f352c5eb"];
 	return YES;
 }
 

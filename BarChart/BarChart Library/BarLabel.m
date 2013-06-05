@@ -47,6 +47,13 @@
 	return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if ((self = [super initWithCoder:aDecoder])) {
+        [self setUp];
+    }
+    return self;
+}
+
 - (void)setUp {
 	self.backgroundColor = [UIColor clearColor];
 	self.textColor = [UIColor blackColor];

@@ -197,8 +197,7 @@
 	
 	CGPathRelease(bubblePath);
 	
-	// Draw text
-	
+	//Draw text
 	if (self.message) {
 		[textColor set];
 		CGRect textFrame = [self contentFrame];

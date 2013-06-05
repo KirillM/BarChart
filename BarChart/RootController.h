@@ -2,7 +2,7 @@
 //  RootController.h
 //  BarChart
 //
-//  Created by Kirill Mezrin on 15.02.12. Updated by iRare Media on June 4, 2013
+//  Created by Kirill Mezrin on 15.02.12. Updated by iRare Media on June 5, 2013
 //  Copyright (c) 2012 Kirill Mezrin. All rights reserved.
 //
 
@@ -12,5 +12,8 @@
 @interface RootController : UIViewController
 
 @property (strong, nonatomic) IBOutlet BarChartView *barChart;
+
+- (IBAction)dismissController:(id)sender;
+- (IBAction)viewDocumentation:(id)sender;
 
 @end
