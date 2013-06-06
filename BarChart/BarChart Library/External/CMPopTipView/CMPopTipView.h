@@ -99,7 +99,7 @@ typedef enum {
 
 @interface CMPopTipView : UIView {
 	UIColor					*backgroundColor;
-	id<CMPopTipViewDelegate>	delegate;
+	id<CMPopTipViewDelegate>	__unsafe_unretained delegate;
 	NSString				*message;
 	id						targetObject;
 	UIColor					*textColor;
@@ -117,14 +117,14 @@ typedef enum {
 	CGPoint					targetPoint;
 }
 
-@property (nonatomic, retain)			UIColor					*backgroundColor;
-@property (nonatomic, assign)		id<CMPopTipViewDelegate>	delegate;
+@property (nonatomic, strong)			UIColor					*backgroundColor;
+@property (nonatomic, unsafe_unretained)		id<CMPopTipViewDelegate>	delegate;
 @property (nonatomic, assign)			BOOL					disableTapToDismiss;
-@property (nonatomic, retain)			NSString				*message;
-@property (nonatomic, retain)           UIView	                *customView;
-@property (nonatomic, retain, readonly)	id						targetObject;
-@property (nonatomic, retain)			UIColor					*textColor;
-@property (nonatomic, retain)			UIFont					*textFont;
+@property (nonatomic, strong)			NSString				*message;
+@property (nonatomic, strong)           UIView	                *customView;
+@property (nonatomic, strong, readonly)	id						targetObject;
+@property (nonatomic, strong)			UIColor					*textColor;
+@property (nonatomic, strong)			UIFont					*textFont;
 @property (nonatomic, assign)			UITextAlignment			textAlignment;
 @property (nonatomic, assign)           CMPopTipAnimation       animation;
 @property (nonatomic, assign)           CGFloat                 maxWidth;

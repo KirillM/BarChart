@@ -1,7 +1,7 @@
 //
 //  BarChartView.h
 //
-//  Created by Mezrin Kirill on 17.02.12.
+//  Created by Mezrin Kirill on 17.02.12. Updated by iRare Media on June 5, 2013.
 //  Copyright (c) Mezrin Kirill 2012-2013.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,9 +32,14 @@
 
 #import <UIKit/UIKit.h>
 #import "PlotChartView.h"
+#import "UIViewSizeShortcuts.h"
+#import "XMLParser.h"
+#import "UIColor+i7HexColor.h"
+#import "BarView.h"
+#import "BarLabel.h"
+#import "BarTypes.h"
 
-@interface BarChartView : UIView
-{
+@interface BarChartView : UIView {
 	PlotChartView *plotChart;
 	UIView *plotView;
 	
@@ -60,6 +65,16 @@
 	CGFloat fontSize;
 }
 
-- (void) setXmlData:(NSData *)xmlData;
+@property (assign) BarDisplayStyle barViewDisplayStyle;
+@property (assign) BarShape barViewShape;
+@property (assign) BarShadow barViewShadow;
+
+- (void)setXmlData:(NSData *)xmlData showAxis:(AxisDisplaySetting)axisDisplay withColor:(UIColor *)axisColor shouldPlotVerticalLines:(BOOL)verticalLines;
+- (void)setDataWithArray:(NSArray *)chartData showAxis:(AxisDisplaySetting)axisDisplay withColor:(UIColor *)axisColor shouldPlotVerticalLines:(BOOL)verticalLines;
+- (NSArray *)createChartDataWithTitles:(NSArray *)titles values:(NSArray *)values colors:(NSArray *)colors labelColors:(NSArray *)labelColors;
+
+- (void)setupBarViewStyle:(BarDisplayStyle)displayStyle;
+- (void)setupBarViewShape:(BarShape)shape;
+- (void)setupBarViewShadow:(BarShadow)shadow;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  XMLParser.m
+//  Bar.h
 //
 //  Created by Mezrin Kirill on 17.02.12.
 //  Copyright (c) Mezrin Kirill 2012-2013.
@@ -23,21 +23,29 @@
 //  THE SOFTWARE.
 //
 
-#import "XMLParser.h"
-#import "XMLParserDelegate.h"
+#import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import "CMPopTipView.h"
+#import "BarTypes.h"
 
-@implementation XMLParser
-
-+ (XMLElement *) parse:(NSData *)data
-{
-	XmlParserDelegate *parserDelegate = [[XmlParserDelegate alloc] init];
-	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
-	[parser setDelegate:parserDelegate];
-	[parser parse];
-	[parser release];
-	XMLElement *root = [[[parserDelegate root] retain] autorelease];
-	[parserDelegate release];
-	return root;
+@interface BarView : UIButton {
+	CGFloat barValue;
+	CGFloat cornerRadius;
+	UIColor *buttonColor;
+	CMPopTipView *popTipView;
 }
+
+@property (nonatomic, assign) BOOL special;
+@property (nonatomic, weak) id owner;
+@property (nonatomic, assign) CGFloat barValue;
+@property (readwrite, nonatomic) CGFloat cornerRadius;
+@property (readwrite, strong, nonatomic) UIColor *buttonColor;
+@property (assign) BarDisplayStyle barViewDisplayStyle;
+@property (assign) BarShape barViewShape;
+@property (assign) BarShadow barViewShadow;
+
+- (void)setupBarStyle:(BarDisplayStyle)displayStyle;
+- (void)setupBarShape:(BarShape)shape;
+- (void)setupBarShadow:(BarShadow)shadow;
 
 @end

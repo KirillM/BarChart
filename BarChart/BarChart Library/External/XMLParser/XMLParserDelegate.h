@@ -1,5 +1,5 @@
 //
-//  PlotChart.h
+//  XmlParserDelegate.h
 //
 //  Created by Mezrin Kirill on 17.02.12.
 //  Copyright (c) Mezrin Kirill 2012-2013.
@@ -23,31 +23,19 @@
 //  THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "XMLElement.h"
 
-@interface PlotChartView : UIView
-{
-	CGFloat paddingTop;
-	CGFloat paddingBotom;
-	CGFloat stepValueAxisY;
-	NSUInteger stepCountAxisX;
-	CGFloat stepWidthAxisY;
-	CGFloat maxValueAxisY;
-	CGFloat fontSize;
-	CGSize labelSizeAxisY;	
-	CGColorRef colorAxisY;
-	BOOL plotVerticalLines;
+@interface XmlParserDelegate : NSObject <NSXMLParserDelegate> {
+	XMLElement *root;
+	NSMutableArray *elementStack;
 }
 
-@property (nonatomic, assign) CGFloat paddingTop;
-@property (nonatomic, assign) CGFloat paddingBotom;
-@property (nonatomic, assign) CGFloat fontSize;
-@property (nonatomic, assign) BOOL plotVerticalLines;
-@property (nonatomic, assign) CGColorRef colorAxisY;
-@property (nonatomic, assign) CGFloat stepValueAxisY;
-@property (nonatomic, assign) NSUInteger stepCountAxisX;
-@property (nonatomic, assign) CGFloat stepWidthAxisY;
-@property (nonatomic, assign) CGFloat maxValueAxisY;
-@property (nonatomic, assign) CGSize labelSizeAxisY;
+@property (nonatomic, retain) XMLElement *root;
+
+- (void)parserDidStartDocument:(NSXMLParser *)parser;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string;
 
 @end
