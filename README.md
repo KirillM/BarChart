@@ -1,5 +1,5 @@
 # Bar Chart 
-<img width=100 src=https://github.com/iRareMedia/BarChart/raw/master/BarChartIcon.png/> A bar graphing standalone library with animation for iOS (Cocoa Touch). More documentation for this library is coming soon - along with a large amount of new features!
+A bar graphing standalone library with animation for iOS (Cocoa Touch). More documentation for this library is coming soon - along with a large amount of new features!
 
 ![Screenshot on iPad and iPhone](https://github.com/iRareMedia/BarChart/raw/master/Screenshot.png)
 
@@ -85,6 +85,14 @@ Before using Bar Chart, make sure your project meets its requirements.
  - Bar Chart works on iOS 4.2 and higher, however the sample project only runs on iOS 5.0 and higher.  
  - Bar Chart now uses Objective-C ARC. If your project does not use ARC, add the ARC flag to the **Bar Chart** files in your project's Compile Sources section: `-fobjc-arc`  
  - You must add the `CoreGraphics` and `QuartzCore` frameworks to your project   
+
+##To-Do
+Bar Chart is a work in progress. We're planning to add these features soon:  
+ [ ] Re-add animations to Bar Chart
+ [x] Add ways to customize Bar Chart
+ [ ] Add Stroke Effetcs Options to Bars
+ [ ] Add more data options (ex. using `UIColor` rather than `HEX`)
+ Think of anything else? Submit an issue!
 
 ##Changelog
 
