@@ -270,7 +270,7 @@
 	{
         NSString *label = [dict objectForKey:@"label"];
         NSNumber *value = [NSNumber numberWithFloat:[[dict objectForKey:@"value"] floatValue]];
-        UIColor *colour = [self getFlatColours:i];
+        UIColor *colour = [UIColor colorWithHexString:[self getFlatColour:i]];
         UIColor *colourLabel = [UIColor blackColor];
         
 		NSDictionary *barInfo = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -374,23 +374,32 @@
 
 #pragma mark - Convenience methods
 
-static NSArray *_arrFlatColours;
-- (UIColor *)getFlatColours:(int)index  {
-    if(!_arrFlatColours)    {
-        _arrFlatColours = [NSArray arrayWithObjects:
-                           [[UIColor colorWithHexString:@"2ecc71"] retain],
-                           [[UIColor colorWithHexString:@"3498db"] retain],
-                           [[UIColor colorWithHexString:@"9b59b6"] retain],
-                           [[UIColor colorWithHexString:@"f1c40f"] retain],
-                           [[UIColor colorWithHexString:@"e74c3c"] retain],
-                           [[UIColor colorWithHexString:@"95a5a6"] retain],
-                           [[UIColor colorWithHexString:@"1abc9c"] retain],
-                           [[UIColor colorWithHexString:@"c0392b"] retain],
-                           [[UIColor colorWithHexString:@"34495e"] retain],
-                           [[UIColor colorWithHexString:@"8e44ad"] retain],
-                           nil];
+- (NSString *)getFlatColour:(int)index  {
+    index = index % 10;
+    switch (index) {
+        case 0:
+            return @"2ecc71";
+        case 1:
+            return @"3498db";
+        case 2:
+            return @"9b59b6";
+        case 3:
+            return @"f1c40f";
+        case 4:
+            return @"e74c3c";
+        case 5:
+            return @"95a5a6";
+        case 6:
+            return @"1abc9c";
+        case 7:
+            return @"c0392b";
+        case 8:
+            return @"34495e";
+        case 9:
+            return @"8e44ad";
+        default:
+            return nil;
     }
-    return _arrFlatColours[index % _arrFlatColours.count];
 }
 
 @end

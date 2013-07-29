@@ -234,9 +234,9 @@
         glossGradient = CGGradientCreateWithColorComponents(rgbColorspace, componentstopGrad, locations, num_locations);
         CGContextDrawLinearGradient(context, glossGradient, topCenter, bottomCenter, 0);
         CGGradientRelease(glossGradient);
-        
-        CGColorSpaceRelease(rgbColorspace);
     }
+    
+    CGColorSpaceRelease(rgbColorspace);
 }
 
 @end
