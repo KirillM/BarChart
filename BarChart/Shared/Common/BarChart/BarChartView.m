@@ -115,7 +115,12 @@
 }	
 
 - (void) setUpChartWithGloss:(BOOL)withGloss
-{	
+{
+    // Get rid of existing widgets
+    [barViews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [barLabels makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [barViews removeAllObjects];
+    [barLabels removeAllObjects];
 	[self calculateFrames];
 	
 	NSUInteger _index = 0;
