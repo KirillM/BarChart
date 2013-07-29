@@ -271,7 +271,7 @@
         NSString *label = [dict objectForKey:@"label"];
         NSNumber *value = [NSNumber numberWithFloat:[[dict objectForKey:@"value"] floatValue]];
         UIColor *colour = [self getFlatColours:i];
-        UIColor *colourLabel = [UIColor whiteColor];
+        UIColor *colourLabel = [UIColor blackColor];
         
 		NSDictionary *barInfo = [NSDictionary dictionaryWithObjectsAndKeys:
                                  label, @"label",
