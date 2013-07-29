@@ -200,41 +200,43 @@
 	
 	CGContextClip(context);
 	
-	// Draw the gloss gradient	
-	CGGradientRef glossGradient;
-	CGFloat locations[2] = { 0.0, 1.0 };
-	CGFloat components[8] = { 1.0, 1.0, 1.0, 0.35,  // Start color
-		1.0, 1.0, 1.0, 0.06 }; // End color
-	rgbColorspace = CGColorSpaceCreateDeviceRGB();
-	glossGradient = CGGradientCreateWithColorComponents(rgbColorspace, components, locations, num_locations);
-	
-	topCenter = CGPointMake(CGRectGetMinX(glossRect), CGRectGetMidY(glossRect));
-	bottomCenter = CGPointMake(CGRectGetMaxX(glossRect), CGRectGetMidY(glossRect));
-	CGContextDrawLinearGradient(context, glossGradient, topCenter, bottomCenter, 0);
-	
-	CGGradientRelease(glossGradient);
-	
-	CGContextRestoreGState(context);
-	CGFloat lastPoint = currentBounds.size.height;
-	
-	if (lastPoint < 100.0) 
-		lastPoint = currentBounds.size.height;
-	else if (lastPoint < 200.0)
-		lastPoint = currentBounds.size.height/2;
-	else
-		lastPoint = currentBounds.size.height/4;
-	
-	CGRect gradRect = CGRectMake(0.0f, 0.0f, currentBounds.size.width, lastPoint);
-	CGFloat componentstopGrad[8] = { 0.0, 0.0, 0.0, 0.6,  // Start color
-		0.0, 0.0, 0.0, 0.0 };
-	topCenter = CGPointMake(CGRectGetMidX(gradRect), 0.0f);
-	bottomCenter = CGPointMake(CGRectGetMidX(gradRect), gradRect.size.height);
-	
-	glossGradient = CGGradientCreateWithColorComponents(rgbColorspace, componentstopGrad, locations, num_locations);
-	CGContextDrawLinearGradient(context, glossGradient, topCenter, bottomCenter, 0);
-	CGGradientRelease(glossGradient);
-	
-	CGColorSpaceRelease(rgbColorspace); 
+	// Draw the gloss gradient
+    if(_hasGloss)   {
+        CGGradientRef glossGradient;
+        CGFloat locations[2] = { 0.0, 1.0 };
+        CGFloat components[8] = { 1.0, 1.0, 1.0, 0.35,  // Start color
+            1.0, 1.0, 1.0, 0.06 }; // End color
+        rgbColorspace = CGColorSpaceCreateDeviceRGB();
+        glossGradient = CGGradientCreateWithColorComponents(rgbColorspace, components, locations, num_locations);
+        
+        topCenter = CGPointMake(CGRectGetMinX(glossRect), CGRectGetMidY(glossRect));
+        bottomCenter = CGPointMake(CGRectGetMaxX(glossRect), CGRectGetMidY(glossRect));
+        CGContextDrawLinearGradient(context, glossGradient, topCenter, bottomCenter, 0);
+        
+        CGGradientRelease(glossGradient);
+        
+        CGContextRestoreGState(context);
+        CGFloat lastPoint = currentBounds.size.height;
+        
+        if (lastPoint < 100.0) 
+            lastPoint = currentBounds.size.height;
+        else if (lastPoint < 200.0)
+            lastPoint = currentBounds.size.height/2;
+        else
+            lastPoint = currentBounds.size.height/4;
+        
+        CGRect gradRect = CGRectMake(0.0f, 0.0f, currentBounds.size.width, lastPoint);
+        CGFloat componentstopGrad[8] = { 0.0, 0.0, 0.0, 0.6,  // Start color
+            0.0, 0.0, 0.0, 0.0 };
+        topCenter = CGPointMake(CGRectGetMidX(gradRect), 0.0f);
+        bottomCenter = CGPointMake(CGRectGetMidX(gradRect), gradRect.size.height);
+        
+        glossGradient = CGGradientCreateWithColorComponents(rgbColorspace, componentstopGrad, locations, num_locations);
+        CGContextDrawLinearGradient(context, glossGradient, topCenter, bottomCenter, 0);
+        CGGradientRelease(glossGradient);
+    }
+    
+    CGColorSpaceRelease(rgbColorspace);
 }
 
 @end

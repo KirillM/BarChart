@@ -32,8 +32,9 @@
 
 @interface BarChartView() 
 - (void) setUp;
-- (void) setUpChart;
+- (void) setUpChartWithGloss:(BOOL)withGloss;
 - (void) calculateFrames;
+
 @end
 
 @implementation BarChartView
@@ -113,8 +114,13 @@
 	}		
 }	
 
-- (void) setUpChart
-{	
+- (void) setUpChartWithGloss:(BOOL)withGloss
+{
+    // Get rid of existing widgets
+    [barViews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [barLabels makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [barViews removeAllObjects];
+    [barLabels removeAllObjects];
 	[self calculateFrames];
 	
 	NSUInteger _index = 0;
@@ -124,6 +130,7 @@
 		bar.cornerRadius = 10.0f;
 		bar.barValue = [[barInfo objectForKey:@"value"] floatValue];
 		bar.owner = self;
+        bar.hasGloss = withGloss;
 		if (realMaxValue == [[barInfo objectForKey:@"value"] floatValue]) 
 		{
 			bar.special = true;
@@ -250,7 +257,82 @@
 		plotChart.labelSizeAxisY = maxStringSize;
 	else
 		plotChart.labelSizeAxisY = CGSizeZero;
-	[self setUpChart];
+	[self setUpChartWithGloss:YES];
+}
+
+- (void) setData:(NSArray *)arrData configuration:(NSDictionary *)confDict  {
+	[chartDataArray removeAllObjects];
+    
+    if(!arrData || arrData.count <= 0)    {
+        NSLog(@"Warning - No data given");
+        return;
+    }
+	
+	NSMutableArray *barValues = [NSMutableArray arrayWithCapacity:arrData.count];
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    int i=0;
+	for (NSDictionary *dict in arrData)
+	{
+        NSString *label = [dict objectForKey:@"label"];
+        NSNumber *value = [NSNumber numberWithFloat:[[dict objectForKey:@"value"] floatValue]];
+        UIColor *colour = [UIColor colorWithHexString:[self getFlatColour:i]];
+        UIColor *colourLabel = [UIColor blackColor];
+        
+		NSDictionary *barInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 label, @"label",
+                                 value, @"value",
+                                 colour, @"color",
+                                 colourLabel, @"labelColor", nil];
+		[chartDataArray addObject:barInfo];
+		[barValues addObject:value];
+        i += 1;
+	}
+	[pool release];
+	
+	maxValue = [[barValues valueForKeyPath:@"@max.floatValue"] floatValue] + [[barValues valueForKeyPath:@"@max.floatValue"] floatValue]*15/100;
+	realMaxValue = [[barValues valueForKeyPath:@"@max.floatValue"] floatValue];
+	maxValue = maxValue - fmodf(maxValue, STEP_AXIS_Y);
+	if (maxValue < realMaxValue)
+	{
+		maxValue = maxValue + STEP_AXIS_Y;
+	}
+	
+    showAxisY = YES;   // Default
+    if([confDict objectForKey:@"showAxisY"])    {
+        showAxisY = [[confDict objectForKey:@"showAxisY"] boolValue];
+    }
+    showAxisX = YES;   // Default
+    if([confDict objectForKey:@"showAxisX"])    {
+        showAxisX = [[confDict objectForKey:@"showAxisX"] boolValue];
+    }
+    plotVerticalLines = YES;   // Default
+    if([confDict objectForKey:@"plotVerticalLines"])    {
+        plotVerticalLines = [[confDict objectForKey:@"plotVerticalLines"] boolValue];
+    }
+	[colorAxisY release];
+	colorAxisY = [[UIColor blackColor] retain];
+	
+	if (showAxisX)
+	{
+		fontSize = FONT_SIZE;
+	}
+	
+	CGSize maxStringSize = [[NSString stringWithFormat:@"%i", (int)maxValue] sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE]];
+	
+	plotChart.frame = CGRectMake(0.0f, 0.0f, self.width, self.height - fontSize);
+	plotChart.fontSize = FONT_SIZE;
+	plotChart.stepCountAxisX = chartDataArray.count;
+	plotChart.stepWidthAxisY = self.width/STROKE_AXIS_Y_SCALE;
+	plotChart.maxValueAxisY = maxValue;
+	plotChart.stepValueAxisY = STEP_AXIS_Y;
+	plotChart.colorAxisY = [colorAxisY CGColor];
+	plotChart.plotVerticalLines = plotVerticalLines;
+	
+	if (showAxisY)
+		plotChart.labelSizeAxisY = maxStringSize;
+	else
+		plotChart.labelSizeAxisY = CGSizeZero;
+	[self setUpChartWithGloss:NO];
 }
 
 - (void) animateBars
@@ -293,6 +375,36 @@
 		}	
 		_index++;
 	}
+}
+
+#pragma mark - Convenience methods
+
+- (NSString *)getFlatColour:(int)index  {
+    index = index % 10;
+    switch (index) {
+        case 0:
+            return @"2ecc71";
+        case 1:
+            return @"3498db";
+        case 2:
+            return @"9b59b6";
+        case 3:
+            return @"f1c40f";
+        case 4:
+            return @"e74c3c";
+        case 5:
+            return @"95a5a6";
+        case 6:
+            return @"1abc9c";
+        case 7:
+            return @"c0392b";
+        case 8:
+            return @"34495e";
+        case 9:
+            return @"8e44ad";
+        default:
+            return nil;
+    }
 }
 
 @end

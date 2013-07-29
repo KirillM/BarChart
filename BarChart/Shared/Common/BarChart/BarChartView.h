@@ -62,4 +62,12 @@
 
 - (void) setXmlData:(NSData *)xmlData;
 
+/*
+ * arrData - Array of dictionaries where each dictionary should have values for 'label' and 'value' keys
+ * confDict - Dictionary which accepts keys 'showAxisY', 'showAxisX' and 'plotVerticalLines'
+ * If confDict is missing keys, defaults are used
+ * Automatically colours data using a Flat UI colour palette
+ */
+- (void) setData:(NSArray *)arrData configuration:(NSDictionary *)confDict;
+
 @end

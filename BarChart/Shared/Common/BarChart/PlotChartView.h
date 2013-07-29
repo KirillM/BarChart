@@ -50,4 +50,5 @@
 @property (nonatomic, assign) CGFloat maxValueAxisY;
 @property (nonatomic, assign) CGSize labelSizeAxisY;
 
+
 @end
