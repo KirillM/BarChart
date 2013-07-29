@@ -39,5 +39,6 @@
 @property (nonatomic, assign) CGFloat barValue;
 @property (readwrite, nonatomic) CGFloat cornerRadius;
 @property (readwrite, retain, nonatomic) UIColor *buttonColor;
+@property (nonatomic, assign) BOOL hasGloss;
 
 @end

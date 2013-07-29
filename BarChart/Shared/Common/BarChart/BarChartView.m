@@ -32,8 +32,9 @@
 
 @interface BarChartView() 
 - (void) setUp;
-- (void) setUpChart;
+- (void) setUpChartWithGloss:(BOOL)withGloss;
 - (void) calculateFrames;
+
 @end
 
 @implementation BarChartView
@@ -113,7 +114,7 @@
 	}		
 }	
 
-- (void) setUpChart
+- (void) setUpChartWithGloss:(BOOL)withGloss
 {	
 	[self calculateFrames];
 	
@@ -124,6 +125,7 @@
 		bar.cornerRadius = 10.0f;
 		bar.barValue = [[barInfo objectForKey:@"value"] floatValue];
 		bar.owner = self;
+        bar.hasGloss = withGloss;
 		if (realMaxValue == [[barInfo objectForKey:@"value"] floatValue]) 
 		{
 			bar.special = true;
@@ -250,7 +252,82 @@
 		plotChart.labelSizeAxisY = maxStringSize;
 	else
 		plotChart.labelSizeAxisY = CGSizeZero;
-	[self setUpChart];
+	[self setUpChartWithGloss:YES];
+}
+
+- (void) setData:(NSArray *)arrData configuration:(NSDictionary *)confDict  {
+	[chartDataArray removeAllObjects];
+    
+    if(!arrData || arrData.count <= 0)    {
+        NSLog(@"Warning - No data given");
+        return;
+    }
+	
+	NSMutableArray *barValues = [NSMutableArray arrayWithCapacity:arrData.count];
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    int i=0;
+	for (NSDictionary *dict in arrData)
+	{
+        NSString *label = [dict objectForKey:@"label"];
+        NSNumber *value = [NSNumber numberWithFloat:[[dict objectForKey:@"value"] floatValue]];
+        UIColor *colour = [self getFlatColours:i];
+        UIColor *colourLabel = [UIColor whiteColor];
+        
+		NSDictionary *barInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 label, @"label",
+                                 value, @"value",
+                                 colour, @"color",
+                                 colourLabel, @"labelColor", nil];
+		[chartDataArray addObject:barInfo];
+		[barValues addObject:value];
+        i += 1;
+	}
+	[pool release];
+	
+	maxValue = [[barValues valueForKeyPath:@"@max.floatValue"] floatValue] + [[barValues valueForKeyPath:@"@max.floatValue"] floatValue]*15/100;
+	realMaxValue = [[barValues valueForKeyPath:@"@max.floatValue"] floatValue];
+	maxValue = maxValue - fmodf(maxValue, STEP_AXIS_Y);
+	if (maxValue < realMaxValue)
+	{
+		maxValue = maxValue + STEP_AXIS_Y;
+	}
+	
+    showAxisY = YES;   // Default
+    if([confDict objectForKey:@"showAxisY"])    {
+        showAxisY = [[confDict objectForKey:@"showAxisY"] boolValue];
+    }
+    showAxisX = YES;   // Default
+    if([confDict objectForKey:@"showAxisX"])    {
+        showAxisX = [[confDict objectForKey:@"showAxisX"] boolValue];
+    }
+    plotVerticalLines = YES;   // Default
+    if([confDict objectForKey:@"plotVerticalLines"])    {
+        plotVerticalLines = [[confDict objectForKey:@"plotVerticalLines"] boolValue];
+    }
+	[colorAxisY release];
+	colorAxisY = [[UIColor blackColor] retain];
+	
+	if (showAxisX)
+	{
+		fontSize = FONT_SIZE;
+	}
+	
+	CGSize maxStringSize = [[NSString stringWithFormat:@"%i", (int)maxValue] sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE]];
+	
+	plotChart.frame = CGRectMake(0.0f, 0.0f, self.width, self.height - fontSize);
+	plotChart.fontSize = FONT_SIZE;
+	plotChart.stepCountAxisX = chartDataArray.count;
+	plotChart.stepWidthAxisY = self.width/STROKE_AXIS_Y_SCALE;
+	plotChart.maxValueAxisY = maxValue;
+	plotChart.stepValueAxisY = STEP_AXIS_Y;
+	plotChart.colorAxisY = [colorAxisY CGColor];
+	plotChart.plotVerticalLines = plotVerticalLines;
+	
+	if (showAxisY)
+		plotChart.labelSizeAxisY = maxStringSize;
+	else
+		plotChart.labelSizeAxisY = CGSizeZero;
+	[self setUpChartWithGloss:NO];
 }
 
 - (void) animateBars
@@ -293,6 +370,27 @@
 		}	
 		_index++;
 	}
+}
+
+#pragma mark - Convenience methods
+
+static NSArray *_arrFlatColours;
+- (UIColor *)getFlatColours:(int)index  {
+    if(!_arrFlatColours)    {
+        _arrFlatColours = [NSArray arrayWithObjects:
+                           [[UIColor colorWithHexString:@"2ecc71"] retain],
+                           [[UIColor colorWithHexString:@"3498db"] retain],
+                           [[UIColor colorWithHexString:@"9b59b6"] retain],
+                           [[UIColor colorWithHexString:@"f1c40f"] retain],
+                           [[UIColor colorWithHexString:@"e74c3c"] retain],
+                           [[UIColor colorWithHexString:@"95a5a6"] retain],
+                           [[UIColor colorWithHexString:@"1abc9c"] retain],
+                           [[UIColor colorWithHexString:@"c0392b"] retain],
+                           [[UIColor colorWithHexString:@"34495e"] retain],
+                           [[UIColor colorWithHexString:@"8e44ad"] retain],
+                           nil];
+    }
+    return _arrFlatColours[index % _arrFlatColours.count];
 }
 
 @end
