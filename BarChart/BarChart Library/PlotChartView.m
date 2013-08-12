@@ -27,7 +27,7 @@
 #import "UIColor+i7HexColor.h"
 
 @interface PlotChartView() 
-- (void) setUp;
+- (void)setUp;
 @end
 
 @implementation PlotChartView
@@ -43,53 +43,44 @@
 @synthesize labelSizeAxisY;
 @synthesize plotVerticalLines;
 
-#pragma mark -
-#pragma mark Initialization and teardown
+#pragma mark - Initialization and teardown
 
-- (id) init
-{
+- (id) init {
 	self = [super init];
-	if (self) 
-	{
+	if (self)  {
 		[self setUp];
 	}
 	return self;
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
 	self = [super initWithFrame:frame];
-	if (self) 
-	{
+	if (self)  {
 		[self setUp];
 	}
 	return self;
 }
 
-- (void) setUp
-{
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if ((self = [super initWithCoder:aDecoder])) {
+        [self setUp];
+    }
+    return self;
+}
+
+- (void)setUp {
 	self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	self.backgroundColor = [UIColor clearColor];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
-- (void) dealloc
-{
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[super dealloc];
-}
-
-- (void) didRotate:(NSNotification *)notification
-{ 
+- (void)didRotate:(NSNotification *)notification { 
 	UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-	if (orientation != UIDeviceOrientationFaceUp && orientation != UIDeviceOrientationFaceDown && orientation != UIDeviceOrientationUnknown)
-	{
+	if (orientation != UIDeviceOrientationFaceUp && orientation != UIDeviceOrientationFaceDown && orientation != UIDeviceOrientationUnknown) {
 		[self setNeedsDisplay];
 	}	
 }
 
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect {
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
 	rect = CGRectMake(0.0f, paddingTop, rect.size.width, rect.size.height - paddingTop - paddingBotom);
@@ -103,14 +94,10 @@
 	CGContextSetLineWidth(context, 1.0f);
 	CGContextSetStrokeColorWithColor(context, [[UIColor colorWithHexString:@"e8ebee"] CGColor]);
 	
-	for (NSUInteger i = 0; i < stepCountAxisY; i++) 
-	{
-		if (i % 2) 
-		{
+	for (NSUInteger i = 0; i < stepCountAxisY; i++)  {
+		if (i % 2) {
 			CGContextSetFillColorWithColor(context, [[UIColor colorWithHexString:@"e8ebee"] CGColor]);
-		}
-		else
-		{
+		} else {
 			CGContextSetFillColorWithColor(context, [[UIColor colorWithHexString:@"e3e5e7"] CGColor]);
 		}
 		
@@ -123,10 +110,8 @@
 	CGContextSetFillColorWithColor(context, colorAxisY);
 	CGContextSetStrokeColorWithColor(context, colorAxisY);
 	
-	if (!CGSizeEqualToSize(labelSizeAxisY, CGSizeZero)) 
-	{
-		for (NSUInteger i = 0; i <= stepCountAxisY; i++) 
-		{
+	if (!CGSizeEqualToSize(labelSizeAxisY, CGSizeZero))  {
+		for (NSUInteger i = 0; i <= stepCountAxisY; i++) {
 			NSString *textX = [NSString stringWithFormat:@"%i",(NSUInteger)(maxValueAxisY - i*stepValueAxisY)];
 			CGRect textRect = CGRectMake(CGRectGetMinX(rect), CGRectGetMinY(rect) + i*stepHeightAxisY - labelSizeAxisY.height/2, labelSizeAxisY.width, labelSizeAxisY.height);
 		
@@ -140,12 +125,10 @@
 		}
 	}	
 	
-	if (plotVerticalLines) 
-	{
+	if (plotVerticalLines)  {
 		CGContextSetStrokeColorWithColor(context, [[UIColor colorWithHexString:@"dadadb"] CGColor]);
 		
-		for (NSUInteger i = 1; i <= stepCountAxisX; i++) 
-		{
+		for (NSUInteger i = 1; i <= stepCountAxisX; i++) {
 			CGContextBeginPath(context);
 			CGContextMoveToPoint(context, CGRectGetMinX(rect) + leftPaddingAxisY + (barFullWidth/2)*(2*i - 1), CGRectGetMinY(rect));
 			CGContextAddLineToPoint(context, CGRectGetMinX(rect) + leftPaddingAxisY + (barFullWidth/2)*(2*i - 1), CGRectGetMaxY(rect));

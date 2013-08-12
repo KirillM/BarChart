@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+<set label="T1" value="19" color="3e5273" labelColor="3e5273"/>
+<set label="T2" value="41" color="F0230C" labelColor="F0230C"/>
+<set label="T3" value="101" color="566967" labelColor="566967"/>
+<set label="T4" value="81" color="016fad" labelColor="016fad"/>
+<set label="T5" value="125" color="3DBA40" labelColor="3DBA40"/>
+<set label="T6" value="244" color="336981" labelColor="336981"/>
+<set label="T7" value="321" color="F2B50C" labelColor="F2B50C"/>
+<set label="T8" value="234" color="9F49AB" labelColor="9F49AB"/>
+<set label="T9" value="255" color="2ca095" labelColor="2ca095"/>
+</chart> 

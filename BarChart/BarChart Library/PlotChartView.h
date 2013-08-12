@@ -1,5 +1,5 @@
 //
-//  Bar.h
+//  PlotChart.h
 //
 //  Created by Mezrin Kirill on 17.02.12.
 //  Copyright (c) Mezrin Kirill 2012-2013.
@@ -24,20 +24,29 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CMPopTipView.h"
 
-@interface BarView : UIButton
-{
-	CGFloat barValue;
-	CGFloat cornerRadius;
-	UIColor *buttonColor;
-	CMPopTipView *popTipView;
+@interface PlotChartView : UIView {
+	CGFloat paddingTop;
+	CGFloat paddingBotom;
+	CGFloat stepValueAxisY;
+	NSUInteger stepCountAxisX;
+	CGFloat stepWidthAxisY;
+	CGFloat maxValueAxisY;
+	CGFloat fontSize;
+	CGSize labelSizeAxisY;	
+	CGColorRef colorAxisY;
+	BOOL plotVerticalLines;
 }
 
-@property (nonatomic, assign) BOOL special;
-@property (nonatomic, assign) id owner;
-@property (nonatomic, assign) CGFloat barValue;
-@property (readwrite, nonatomic) CGFloat cornerRadius;
-@property (readwrite, retain, nonatomic) UIColor *buttonColor;
+@property (nonatomic, assign) CGFloat paddingTop;
+@property (nonatomic, assign) CGFloat paddingBotom;
+@property (nonatomic, assign) CGFloat fontSize;
+@property (nonatomic, assign) BOOL plotVerticalLines;
+@property (nonatomic, assign) CGColorRef colorAxisY;
+@property (nonatomic, assign) CGFloat stepValueAxisY;
+@property (nonatomic, assign) NSUInteger stepCountAxisX;
+@property (nonatomic, assign) CGFloat stepWidthAxisY;
+@property (nonatomic, assign) CGFloat maxValueAxisY;
+@property (nonatomic, assign) CGSize labelSizeAxisY;
 
 @end

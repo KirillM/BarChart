@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99A4BFA4175EA8C700DC4BF9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99A4BFA3175EA8C700DC4BF9 /* Default-568h@2x.png */; };
+		99A4BFA6175EA8E000DC4BF9 /* Storyboard-iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99A4BFA5175EA8E000DC4BF9 /* Storyboard-iPhone.storyboard */; };
+		99A4BFA8175ED06000DC4BF9 /* Storyboard-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99A4BFA7175ED06000DC4BF9 /* Storyboard-iPad.storyboard */; };
+		99A4BFC0175ED58300DC4BF9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 99A4BFBF175ED58300DC4BF9 /* Icon.png */; };
+		99A4BFC2175ED58600DC4BF9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99A4BFC1175ED58600DC4BF9 /* Icon@2x.png */; };
+		99A4BFC4175ED58D00DC4BF9 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 99A4BFC3175ED58D00DC4BF9 /* Icon-72.png */; };
+		99A4BFC6175ED59000DC4BF9 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99A4BFC5175ED59000DC4BF9 /* Icon-72@2x.png */; };
+		99A66CA6175F856C00A17045 /* BarChartIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 99A66CA5175F856C00A17045 /* BarChartIcon.png */; };
+		99A66CE1175F8C7400A17045 /* BarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A66CCA175F8C7400A17045 /* BarChartView.m */; };
+		99A66CE2175F8C7400A17045 /* BarLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A66CCC175F8C7400A17045 /* BarLabel.m */; };
+		99A66CE3175F8C7400A17045 /* BarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A66CCE175F8C7400A17045 /* BarView.m */; };
+		99A66CE4175F8C7400A17045 /* CMPopTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A66CD2175F8C7400A17045 /* CMPopTipView.m */; };
+		99A66CE5175F8C7400A17045 /* UIColor+i7HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A66CD5175F8C7400A17045 /* UIColor+i7HexColor.m */; };
+		99A66CE6175F8C7400A17045 /* UIViewSizeShortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A66CD7175F8C7400A17045 /* UIViewSizeShortcuts.m */; };
+		99A66CE7175F8C7400A17045 /* XMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A66CDA175F8C7400A17045 /* XMLElement.m */; };
+		99A66CE8175F8C7400A17045 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A66CDC175F8C7400A17045 /* XMLParser.m */; };
+		99A66CE9175F8C7400A17045 /* XMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A66CDE175F8C7400A17045 /* XMLParserDelegate.m */; };
+		99A66CEA175F8C7400A17045 /* PlotChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A66CE0175F8C7400A17045 /* PlotChartView.m */; };
+		99A66CF1175FF1AD00A17045 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A66CF0175FF1AD00A17045 /* QuartzCore.framework */; };
 		FA20611A14EBEF4200D4F642 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20611914EBEF4200D4F642 /* UIKit.framework */; };
 		FA20611C14EBEF4200D4F642 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20611B14EBEF4200D4F642 /* Foundation.framework */; };
 		FA20611E14EBEF4200D4F642 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20611D14EBEF4200D4F642 /* CoreGraphics.framework */; };
@@ -15,19 +34,39 @@
 		FA20612A14EBEF4200D4F642 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20612914EBEF4200D4F642 /* AppDelegate.m */; };
 		FA56664B14EBFFF5006BBF89 /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA56664A14EBFFF5006BBF89 /* RootController.m */; };
 		FA56665514EC1E65006BBF89 /* barChart.xml in Resources */ = {isa = PBXBuildFile; fileRef = FA56665414EC1E65006BBF89 /* barChart.xml */; };
-		FAAFB6C814EEB5ED00AAD768 /* CMPopTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB6C614EEB5ED00AAD768 /* CMPopTipView.m */; };
-		FAAFB6CF14EEB5FB00AAD768 /* XMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB6C914EEB5FB00AAD768 /* XMLParserDelegate.m */; };
-		FAAFB6D014EEB5FB00AAD768 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB6CB14EEB5FB00AAD768 /* XMLParser.m */; };
-		FAAFB6D114EEB5FB00AAD768 /* XMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB6CD14EEB5FB00AAD768 /* XMLElement.m */; };
-		FAAFB6D614EEB60500AAD768 /* UIViewSizeShortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB6D214EEB60500AAD768 /* UIViewSizeShortcuts.m */; };
-		FAAFB6D714EEB60500AAD768 /* UIColor+i7HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB6D414EEB60500AAD768 /* UIColor+i7HexColor.m */; };
-		FAAFB6E014EEB61C00AAD768 /* PlotChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB6D814EEB61C00AAD768 /* PlotChartView.m */; };
-		FAAFB6E114EEB61C00AAD768 /* BarLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB6DA14EEB61C00AAD768 /* BarLabel.m */; };
-		FAAFB6E214EEB61C00AAD768 /* BarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB6DC14EEB61C00AAD768 /* BarChartView.m */; };
-		FAAFB6E314EEB61C00AAD768 /* BarView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB6DE14EEB61C00AAD768 /* BarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		99A4BFA3175EA8C700DC4BF9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		99A4BFA5175EA8E000DC4BF9 /* Storyboard-iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Storyboard-iPhone.storyboard"; sourceTree = "<group>"; };
+		99A4BFA7175ED06000DC4BF9 /* Storyboard-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Storyboard-iPad.storyboard"; sourceTree = "<group>"; };
+		99A4BFBF175ED58300DC4BF9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		99A4BFC1175ED58600DC4BF9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		99A4BFC3175ED58D00DC4BF9 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		99A4BFC5175ED59000DC4BF9 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		99A66CA5175F856C00A17045 /* BarChartIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BarChartIcon.png; sourceTree = "<group>"; };
+		99A66CC9175F8C7400A17045 /* BarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartView.h; sourceTree = "<group>"; };
+		99A66CCA175F8C7400A17045 /* BarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartView.m; sourceTree = "<group>"; };
+		99A66CCB175F8C7400A17045 /* BarLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarLabel.h; sourceTree = "<group>"; };
+		99A66CCC175F8C7400A17045 /* BarLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarLabel.m; sourceTree = "<group>"; };
+		99A66CCD175F8C7400A17045 /* BarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarView.h; sourceTree = "<group>"; };
+		99A66CCE175F8C7400A17045 /* BarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarView.m; sourceTree = "<group>"; };
+		99A66CD1175F8C7400A17045 /* CMPopTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPopTipView.h; sourceTree = "<group>"; };
+		99A66CD2175F8C7400A17045 /* CMPopTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPopTipView.m; sourceTree = "<group>"; };
+		99A66CD4175F8C7400A17045 /* UIColor+i7HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+i7HexColor.h"; sourceTree = "<group>"; };
+		99A66CD5175F8C7400A17045 /* UIColor+i7HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+i7HexColor.m"; sourceTree = "<group>"; };
+		99A66CD6175F8C7400A17045 /* UIViewSizeShortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewSizeShortcuts.h; sourceTree = "<group>"; };
+		99A66CD7175F8C7400A17045 /* UIViewSizeShortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewSizeShortcuts.m; sourceTree = "<group>"; };
+		99A66CD9175F8C7400A17045 /* XMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLElement.h; sourceTree = "<group>"; };
+		99A66CDA175F8C7400A17045 /* XMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLElement.m; sourceTree = "<group>"; };
+		99A66CDB175F8C7400A17045 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
+		99A66CDC175F8C7400A17045 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+		99A66CDD175F8C7400A17045 /* XMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParserDelegate.h; sourceTree = "<group>"; };
+		99A66CDE175F8C7400A17045 /* XMLParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParserDelegate.m; sourceTree = "<group>"; };
+		99A66CDF175F8C7400A17045 /* PlotChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotChartView.h; sourceTree = "<group>"; };
+		99A66CE0175F8C7400A17045 /* PlotChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlotChartView.m; sourceTree = "<group>"; };
+		99A66CEC175FC9BA00A17045 /* BarTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarTypes.h; sourceTree = "<group>"; };
+		99A66CF0175FF1AD00A17045 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FA20611514EBEF4200D4F642 /* BarChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA20611914EBEF4200D4F642 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FA20611B14EBEF4200D4F642 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -38,29 +77,9 @@
 		FA20612714EBEF4200D4F642 /* BarChart-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BarChart-Prefix.pch"; sourceTree = "<group>"; };
 		FA20612814EBEF4200D4F642 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA20612914EBEF4200D4F642 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FA56664914EBFFF5006BBF89 /* RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootController.h; path = Shared/Controllers/RootController.h; sourceTree = "<group>"; };
-		FA56664A14EBFFF5006BBF89 /* RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootController.m; path = Shared/Controllers/RootController.m; sourceTree = "<group>"; };
-		FA56665414EC1E65006BBF89 /* barChart.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = barChart.xml; path = Shared/Data/barChart.xml; sourceTree = "<group>"; };
-		FAAFB6C614EEB5ED00AAD768 /* CMPopTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMPopTipView.m; path = Shared/Common/BarChart/External/CMPopTipView/CMPopTipView.m; sourceTree = "<group>"; };
-		FAAFB6C714EEB5ED00AAD768 /* CMPopTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMPopTipView.h; path = Shared/Common/BarChart/External/CMPopTipView/CMPopTipView.h; sourceTree = "<group>"; };
-		FAAFB6C914EEB5FB00AAD768 /* XMLParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLParserDelegate.m; path = Shared/Common/BarChart/External/XMLParser/XMLParserDelegate.m; sourceTree = "<group>"; };
-		FAAFB6CA14EEB5FB00AAD768 /* XMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLParserDelegate.h; path = Shared/Common/BarChart/External/XMLParser/XMLParserDelegate.h; sourceTree = "<group>"; };
-		FAAFB6CB14EEB5FB00AAD768 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLParser.m; path = Shared/Common/BarChart/External/XMLParser/XMLParser.m; sourceTree = "<group>"; };
-		FAAFB6CC14EEB5FB00AAD768 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLParser.h; path = Shared/Common/BarChart/External/XMLParser/XMLParser.h; sourceTree = "<group>"; };
-		FAAFB6CD14EEB5FB00AAD768 /* XMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLElement.m; path = Shared/Common/BarChart/External/XMLParser/XMLElement.m; sourceTree = "<group>"; };
-		FAAFB6CE14EEB5FB00AAD768 /* XMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLElement.h; path = Shared/Common/BarChart/External/XMLParser/XMLElement.h; sourceTree = "<group>"; };
-		FAAFB6D214EEB60500AAD768 /* UIViewSizeShortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIViewSizeShortcuts.m; path = Shared/Common/BarChart/External/Helpers/UIViewSizeShortcuts.m; sourceTree = "<group>"; };
-		FAAFB6D314EEB60500AAD768 /* UIViewSizeShortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIViewSizeShortcuts.h; path = Shared/Common/BarChart/External/Helpers/UIViewSizeShortcuts.h; sourceTree = "<group>"; };
-		FAAFB6D414EEB60500AAD768 /* UIColor+i7HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+i7HexColor.m"; path = "Shared/Common/BarChart/External/Helpers/UIColor+i7HexColor.m"; sourceTree = "<group>"; };
-		FAAFB6D514EEB60500AAD768 /* UIColor+i7HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+i7HexColor.h"; path = "Shared/Common/BarChart/External/Helpers/UIColor+i7HexColor.h"; sourceTree = "<group>"; };
-		FAAFB6D814EEB61C00AAD768 /* PlotChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlotChartView.m; path = Shared/Common/BarChart/PlotChartView.m; sourceTree = "<group>"; };
-		FAAFB6D914EEB61C00AAD768 /* PlotChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; name = PlotChartView.h; path = Shared/Common/BarChart/PlotChartView.h; sourceTree = "<group>"; };
-		FAAFB6DA14EEB61C00AAD768 /* BarLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarLabel.m; path = Shared/Common/BarChart/BarLabel.m; sourceTree = "<group>"; };
-		FAAFB6DB14EEB61C00AAD768 /* BarLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarLabel.h; path = Shared/Common/BarChart/BarLabel.h; sourceTree = "<group>"; };
-		FAAFB6DC14EEB61C00AAD768 /* BarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarChartView.m; path = Shared/Common/BarChart/BarChartView.m; sourceTree = "<group>"; };
-		FAAFB6DD14EEB61C00AAD768 /* BarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; name = BarChartView.h; path = Shared/Common/BarChart/BarChartView.h; sourceTree = "<group>"; };
-		FAAFB6DE14EEB61C00AAD768 /* BarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarView.m; path = Shared/Common/BarChart/BarView.m; sourceTree = "<group>"; };
-		FAAFB6DF14EEB61C00AAD768 /* BarView.h */ = {isa = PBXFileReference; fileEncoding = 4; name = BarView.h; path = Shared/Common/BarChart/BarView.h; sourceTree = "<group>"; };
+		FA56664914EBFFF5006BBF89 /* RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootController.h; sourceTree = "<group>"; };
+		FA56664A14EBFFF5006BBF89 /* RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootController.m; sourceTree = "<group>"; };
+		FA56665414EC1E65006BBF89 /* barChart.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = barChart.xml; path = Data/barChart.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99A66CF1175FF1AD00A17045 /* QuartzCore.framework in Frameworks */,
 				FA20611A14EBEF4200D4F642 /* UIKit.framework in Frameworks */,
 				FA20611C14EBEF4200D4F642 /* Foundation.framework in Frameworks */,
 				FA20611E14EBEF4200D4F642 /* CoreGraphics.framework in Frameworks */,
@@ -77,9 +97,83 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99A4BFC7175ED5B500DC4BF9 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				99A66CA5175F856C00A17045 /* BarChartIcon.png */,
+				99A4BFC5175ED59000DC4BF9 /* Icon-72@2x.png */,
+				99A4BFC3175ED58D00DC4BF9 /* Icon-72.png */,
+				99A4BFC1175ED58600DC4BF9 /* Icon@2x.png */,
+				99A4BFBF175ED58300DC4BF9 /* Icon.png */,
+				99A4BFA3175EA8C700DC4BF9 /* Default-568h@2x.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		99A66CC8175F8C7400A17045 /* BarChart Library */ = {
+			isa = PBXGroup;
+			children = (
+				99A66CC9175F8C7400A17045 /* BarChartView.h */,
+				99A66CCA175F8C7400A17045 /* BarChartView.m */,
+				99A66CCB175F8C7400A17045 /* BarLabel.h */,
+				99A66CCC175F8C7400A17045 /* BarLabel.m */,
+				99A66CCD175F8C7400A17045 /* BarView.h */,
+				99A66CCE175F8C7400A17045 /* BarView.m */,
+				99A66CDF175F8C7400A17045 /* PlotChartView.h */,
+				99A66CE0175F8C7400A17045 /* PlotChartView.m */,
+				99A66CEC175FC9BA00A17045 /* BarTypes.h */,
+				99A66CCF175F8C7400A17045 /* External */,
+			);
+			path = "BarChart Library";
+			sourceTree = "<group>";
+		};
+		99A66CCF175F8C7400A17045 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				99A66CD0175F8C7400A17045 /* CMPopTipView */,
+				99A66CD3175F8C7400A17045 /* Helpers */,
+				99A66CD8175F8C7400A17045 /* XMLParser */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		99A66CD0175F8C7400A17045 /* CMPopTipView */ = {
+			isa = PBXGroup;
+			children = (
+				99A66CD1175F8C7400A17045 /* CMPopTipView.h */,
+				99A66CD2175F8C7400A17045 /* CMPopTipView.m */,
+			);
+			path = CMPopTipView;
+			sourceTree = "<group>";
+		};
+		99A66CD3175F8C7400A17045 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				99A66CD4175F8C7400A17045 /* UIColor+i7HexColor.h */,
+				99A66CD5175F8C7400A17045 /* UIColor+i7HexColor.m */,
+				99A66CD6175F8C7400A17045 /* UIViewSizeShortcuts.h */,
+				99A66CD7175F8C7400A17045 /* UIViewSizeShortcuts.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		99A66CD8175F8C7400A17045 /* XMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				99A66CD9175F8C7400A17045 /* XMLElement.h */,
+				99A66CDA175F8C7400A17045 /* XMLElement.m */,
+				99A66CDB175F8C7400A17045 /* XMLParser.h */,
+				99A66CDC175F8C7400A17045 /* XMLParser.m */,
+				99A66CDD175F8C7400A17045 /* XMLParserDelegate.h */,
+				99A66CDE175F8C7400A17045 /* XMLParserDelegate.m */,
+			);
+			path = XMLParser;
+			sourceTree = "<group>";
+		};
 		FA20610A14EBEF4100D4F642 = {
 			isa = PBXGroup;
 			children = (
+				99A4BFC7175ED5B500DC4BF9 /* Icons */,
 				FA20611F14EBEF4200D4F642 /* BarChart */,
 				FA20611814EBEF4200D4F642 /* Frameworks */,
 				FA20611614EBEF4200D4F642 /* Products */,
@@ -97,6 +191,7 @@
 		FA20611814EBEF4200D4F642 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				99A66CF0175FF1AD00A17045 /* QuartzCore.framework */,
 				FA20611914EBEF4200D4F642 /* UIKit.framework */,
 				FA20611B14EBEF4200D4F642 /* Foundation.framework */,
 				FA20611D14EBEF4200D4F642 /* CoreGraphics.framework */,
@@ -107,9 +202,14 @@
 		FA20611F14EBEF4200D4F642 /* BarChart */ = {
 			isa = PBXGroup;
 			children = (
-				FA56663314EBFF68006BBF89 /* Shared */,
+				99A66CC8175F8C7400A17045 /* BarChart Library */,
+				FA56665314EC1AE0006BBF89 /* BarChart Data */,
 				FA20612814EBEF4200D4F642 /* AppDelegate.h */,
 				FA20612914EBEF4200D4F642 /* AppDelegate.m */,
+				99A4BFA5175EA8E000DC4BF9 /* Storyboard-iPhone.storyboard */,
+				99A4BFA7175ED06000DC4BF9 /* Storyboard-iPad.storyboard */,
+				FA56664914EBFFF5006BBF89 /* RootController.h */,
+				FA56664A14EBFFF5006BBF89 /* RootController.m */,
 				FA20612014EBEF4200D4F642 /* Supporting Files */,
 			);
 			path = BarChart;
@@ -126,98 +226,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FA56663314EBFF68006BBF89 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				FA56665314EC1AE0006BBF89 /* Data */,
-				FA56663714EBFF80006BBF89 /* Common */,
-				FA56663514EBFF72006BBF89 /* Controllers */,
-			);
-			name = Shared;
-			sourceTree = "<group>";
-		};
-		FA56663514EBFF72006BBF89 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				FA56664914EBFFF5006BBF89 /* RootController.h */,
-				FA56664A14EBFFF5006BBF89 /* RootController.m */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
-		FA56663714EBFF80006BBF89 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				FAAFB6C114EEB5AB00AAD768 /* BarChart */,
-			);
-			name = Common;
-			sourceTree = "<group>";
-		};
-		FA56665314EC1AE0006BBF89 /* Data */ = {
+		FA56665314EC1AE0006BBF89 /* BarChart Data */ = {
 			isa = PBXGroup;
 			children = (
 				FA56665414EC1E65006BBF89 /* barChart.xml */,
 			);
-			name = Data;
-			sourceTree = "<group>";
-		};
-		FAAFB6C114EEB5AB00AAD768 /* BarChart */ = {
-			isa = PBXGroup;
-			children = (
-				FAAFB6D814EEB61C00AAD768 /* PlotChartView.m */,
-				FAAFB6D914EEB61C00AAD768 /* PlotChartView.h */,
-				FAAFB6DA14EEB61C00AAD768 /* BarLabel.m */,
-				FAAFB6DB14EEB61C00AAD768 /* BarLabel.h */,
-				FAAFB6DC14EEB61C00AAD768 /* BarChartView.m */,
-				FAAFB6DD14EEB61C00AAD768 /* BarChartView.h */,
-				FAAFB6DE14EEB61C00AAD768 /* BarView.m */,
-				FAAFB6DF14EEB61C00AAD768 /* BarView.h */,
-				FAAFB6C214EEB5B800AAD768 /* External */,
-			);
-			name = BarChart;
-			sourceTree = "<group>";
-		};
-		FAAFB6C214EEB5B800AAD768 /* External */ = {
-			isa = PBXGroup;
-			children = (
-				FAAFB6C514EEB5DD00AAD768 /* Helpers */,
-				FAAFB6C414EEB5D200AAD768 /* XMLParser */,
-				FAAFB6C314EEB5C400AAD768 /* CMPopTipView */,
-			);
-			name = External;
-			sourceTree = "<group>";
-		};
-		FAAFB6C314EEB5C400AAD768 /* CMPopTipView */ = {
-			isa = PBXGroup;
-			children = (
-				FAAFB6C614EEB5ED00AAD768 /* CMPopTipView.m */,
-				FAAFB6C714EEB5ED00AAD768 /* CMPopTipView.h */,
-			);
-			name = CMPopTipView;
-			sourceTree = "<group>";
-		};
-		FAAFB6C414EEB5D200AAD768 /* XMLParser */ = {
-			isa = PBXGroup;
-			children = (
-				FAAFB6C914EEB5FB00AAD768 /* XMLParserDelegate.m */,
-				FAAFB6CA14EEB5FB00AAD768 /* XMLParserDelegate.h */,
-				FAAFB6CB14EEB5FB00AAD768 /* XMLParser.m */,
-				FAAFB6CC14EEB5FB00AAD768 /* XMLParser.h */,
-				FAAFB6CD14EEB5FB00AAD768 /* XMLElement.m */,
-				FAAFB6CE14EEB5FB00AAD768 /* XMLElement.h */,
-			);
-			name = XMLParser;
-			sourceTree = "<group>";
-		};
-		FAAFB6C514EEB5DD00AAD768 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				FAAFB6D214EEB60500AAD768 /* UIViewSizeShortcuts.m */,
-				FAAFB6D314EEB60500AAD768 /* UIViewSizeShortcuts.h */,
-				FAAFB6D414EEB60500AAD768 /* UIColor+i7HexColor.m */,
-				FAAFB6D514EEB60500AAD768 /* UIColor+i7HexColor.h */,
-			);
-			name = Helpers;
+			name = "BarChart Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +241,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA20612D14EBEF4200D4F642 /* Build configuration list for PBXNativeTarget "BarChart" */;
 			buildPhases = (
+				99A4BFA9175ED18600DC4BF9 /* Increment Build */,
 				FA20611114EBEF4200D4F642 /* Sources */,
 				FA20611214EBEF4200D4F642 /* Frameworks */,
 				FA20611314EBEF4200D4F642 /* Resources */,
@@ -272,10 +287,35 @@
 			files = (
 				FA20612414EBEF4200D4F642 /* InfoPlist.strings in Resources */,
 				FA56665514EC1E65006BBF89 /* barChart.xml in Resources */,
+				99A4BFA4175EA8C700DC4BF9 /* Default-568h@2x.png in Resources */,
+				99A4BFA6175EA8E000DC4BF9 /* Storyboard-iPhone.storyboard in Resources */,
+				99A4BFA8175ED06000DC4BF9 /* Storyboard-iPad.storyboard in Resources */,
+				99A4BFC0175ED58300DC4BF9 /* Icon.png in Resources */,
+				99A4BFC2175ED58600DC4BF9 /* Icon@2x.png in Resources */,
+				99A4BFC4175ED58D00DC4BF9 /* Icon-72.png in Resources */,
+				99A4BFC6175ED59000DC4BF9 /* Icon-72@2x.png in Resources */,
+				99A66CA6175F856C00A17045 /* BarChartIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		99A4BFA9175ED18600DC4BF9 /* Increment Build */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Increment Build";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA20611114EBEF4200D4F642 /* Sources */ = {
@@ -285,16 +325,16 @@
 				FA20612614EBEF4200D4F642 /* main.m in Sources */,
 				FA20612A14EBEF4200D4F642 /* AppDelegate.m in Sources */,
 				FA56664B14EBFFF5006BBF89 /* RootController.m in Sources */,
-				FAAFB6C814EEB5ED00AAD768 /* CMPopTipView.m in Sources */,
-				FAAFB6CF14EEB5FB00AAD768 /* XMLParserDelegate.m in Sources */,
-				FAAFB6D014EEB5FB00AAD768 /* XMLParser.m in Sources */,
-				FAAFB6D114EEB5FB00AAD768 /* XMLElement.m in Sources */,
-				FAAFB6D614EEB60500AAD768 /* UIViewSizeShortcuts.m in Sources */,
-				FAAFB6D714EEB60500AAD768 /* UIColor+i7HexColor.m in Sources */,
-				FAAFB6E014EEB61C00AAD768 /* PlotChartView.m in Sources */,
-				FAAFB6E114EEB61C00AAD768 /* BarLabel.m in Sources */,
-				FAAFB6E214EEB61C00AAD768 /* BarChartView.m in Sources */,
-				FAAFB6E314EEB61C00AAD768 /* BarView.m in Sources */,
+				99A66CE1175F8C7400A17045 /* BarChartView.m in Sources */,
+				99A66CE2175F8C7400A17045 /* BarLabel.m in Sources */,
+				99A66CE3175F8C7400A17045 /* BarView.m in Sources */,
+				99A66CE4175F8C7400A17045 /* CMPopTipView.m in Sources */,
+				99A66CE5175F8C7400A17045 /* UIColor+i7HexColor.m in Sources */,
+				99A66CE6175F8C7400A17045 /* UIViewSizeShortcuts.m in Sources */,
+				99A66CE7175F8C7400A17045 /* XMLElement.m in Sources */,
+				99A66CE8175F8C7400A17045 /* XMLParser.m in Sources */,
+				99A66CE9175F8C7400A17045 /* XMLParserDelegate.m in Sources */,
+				99A66CEA175F8C7400A17045 /* PlotChartView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,14 +406,17 @@
 		FA20612E14EBEF4200D4F642 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					armv7,
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BarChart/BarChart-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "BarChart/BarChart-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -382,14 +425,17 @@
 		FA20612F14EBEF4200D4F642 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					armv7,
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BarChart/BarChart-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "BarChart/BarChart-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

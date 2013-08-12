@@ -1,5 +1,5 @@
 //
-//  XmlParserDelegate.h
+//  BarLabel.m
 //
 //  Created by Mezrin Kirill on 17.02.12.
 //  Copyright (c) Mezrin Kirill 2012-2013.
@@ -23,20 +23,43 @@
 //  THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
-#import "XMLElement.h"
+#import "BarLabel.h"
 
-@interface XmlParserDelegate : NSObject <NSXMLParserDelegate>
-{
-	XMLElement *root;
-	NSMutableArray *elementStack;
+@interface BarLabel() 
+- (void)setUp;
+@end
+
+@implementation BarLabel
+
+- (id) init {
+	self = [super init];
+	if (self)  {
+		[self setUp];
+	}
+	return self;
 }
 
-@property (nonatomic, retain) XMLElement *root;
+- (id)initWithFrame:(CGRect)frame {
+	self = [super initWithFrame:frame];
+	if (self)  {
+		[self setUp];
+	}
+	return self;
+}
 
-- (void)parserDidStartDocument:(NSXMLParser *)parser;
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string;
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if ((self = [super initWithCoder:aDecoder])) {
+        [self setUp];
+    }
+    return self;
+}
+
+- (void)setUp {
+	self.backgroundColor = [UIColor clearColor];
+	self.textColor = [UIColor blackColor];
+	self.font = [UIFont boldSystemFontOfSize:13.0f];
+	self.textAlignment = UITextAlignmentCenter;
+	self.lineBreakMode = UILineBreakModeTailTruncation;
+}
 
 @end

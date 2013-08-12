@@ -29,15 +29,12 @@
 
 @synthesize children, attributes, parent, name, innerText;
 
-- init
-{
+- init {
 	return [self initWithName:nil];
 }
 
-- initWithName:(NSString *)aname
-{
-	if ( self = [super init] )
-	{
+- initWithName:(NSString *)aname {
+	if ( self = [super init] ) {
 		name = aname;
 		children = [[NSMutableArray alloc] init];
 		attributes = [[NSMutableDictionary alloc] init];
@@ -46,32 +43,20 @@
 	return self;
 }
 
-- (void) dealloc
-{
-	[children release];
-	[attributes release];
-	[name release];
-	[innerText release];
-	[super dealloc];
-}
 
-- (bool) hasAttribute:(NSString *)aname
-{
+- (bool) hasAttribute:(NSString *)aname {
 	return ([attributes objectForKey:aname] != nil);
 }
 
-- (NSString *) getAttribute:(NSString *)aname
-{
+- (NSString *) getAttribute:(NSString *)aname {
 	return [attributes objectForKey:aname];
 }
 
-- (void) setAttribute:(NSString *)aname value:(NSString *)value
-{
+- (void)setAttribute:(NSString *)aname value:(NSString *)value {
 	[attributes setValue:value forKey:aname];
 }
 
-- (NSString *) escapedXmlString:(NSString *)string replaceQuotes:(bool)replaceQuotes
-{
+- (NSString *) escapedXmlString:(NSString *)string replaceQuotes:(bool)replaceQuotes {
 	NSMutableString *ms = [NSMutableString stringWithString:string];
 	[ms replaceOccurrencesOfString:@"&" withString:@"&amp;" options:0 range:NSMakeRange(0, [ms length])];
 	[ms replaceOccurrencesOfString:@"<" withString:@"&lt;" options:0 range:NSMakeRange(0, [ms length])];
@@ -81,50 +66,44 @@
 	return ms;
 }
 
-- (XMLElement *) getChild:(NSString *)childName
-{
+- (XMLElement *) getChild:(NSString *)childName {
 	for (XMLElement *el in children)
 		if ([el.name isEqual:childName])
 			return el;
 	return nil;
 }
 
-- (XMLElement *) appendElement:(NSString *)aname
-{
+- (XMLElement *) appendElement:(NSString *)aname {
 	XMLElement *el = [[XMLElement alloc] init];
 	el.name = aname;
 	el.parent = self;
 	[self.children addObject:el];
-	[el release]; // collection now pwns el
+	 // collection now pwns el
 	
 	return el;
 }
 
-- (XMLElement *) appendElement:(NSString *)aname withText:(NSString *)text
-{
+- (XMLElement *) appendElement:(NSString *)aname withText:(NSString *)text {
 	XMLElement *el = [self appendElement:aname];
 	el.innerText = text;
 	return el;
 }
 
-- (NSString *) childText:(NSString *)childName
-{
+- (NSString *) childText:(NSString *)childName {
 	for (XMLElement *el in children)
 		if ([el.name isEqual:childName])
 			return el.innerText;
 	return nil;
 }
 
-- (NSString *) copyOuterXml
-{
-	NSMutableString* xml = [[[NSMutableString alloc] init] autorelease];
+- (NSString *) copyOuterXml {
+	NSMutableString* xml = [[NSMutableString alloc] init];
 
 	// Open start tag
 	[xml appendFormat: @"<%@", name];
 	
 	// Attributes
-	for (NSString *aname in attributes)
-	{
+	for (NSString *aname in attributes) {
 		NSString *avalue = [self escapedXmlString:[attributes objectForKey:aname] replaceQuotes:YES];
 		[xml appendFormat: @" %@=\"%@\"", aname, avalue];
 	}
@@ -132,25 +111,21 @@
 	// Close start tag
 	if ( (innerText != nil && [innerText length] > 0) || ([children count] > 0))
 		[xml appendString: @">"];
-	else
-	{
+	else {
 		[xml appendString: @"/>"];
 		return xml;
 	}
 
 	// Inner text
-	if (innerText != nil && [innerText length] > 0)
-	{
+	if (innerText != nil && [innerText length] > 0) {
 		NSString *avalue = [self escapedXmlString:innerText replaceQuotes:NO];
 		[xml appendString:avalue];
 	}
 	
 	// Children
-	for (int i = 0; i < [children count]; i++)
-	{
+	for (int i = 0; i < [children count]; i++) {
 		NSString *childXml = [(XMLElement*)[children objectAtIndex: i] copyOuterXml];
 		[xml appendString:childXml];
-		[childXml release];
 	}
 		
 	// End tag
@@ -159,16 +134,14 @@
 	return xml;
 }
 
-- (XMLElement *) rootElement
-{
+- (XMLElement *) rootElement {
 	if (parent == nil)
 		return self;
 	else
 		return [parent rootElement];
 }
 
-- (XMLElement *) firstChild
-{
+- (XMLElement *) firstChild {
 	if ([children count] > 0)
 		return [children objectAtIndex:0];
 	else

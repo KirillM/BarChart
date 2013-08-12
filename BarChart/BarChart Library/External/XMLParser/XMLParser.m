@@ -1,5 +1,5 @@
 //
-//  BarLabel.m
+//  XMLParser.m
 //
 //  Created by Mezrin Kirill on 17.02.12.
 //  Copyright (c) Mezrin Kirill 2012-2013.
@@ -23,41 +23,18 @@
 //  THE SOFTWARE.
 //
 
-#import "BarLabel.h"
+#import "XMLParser.h"
+#import "XMLParserDelegate.h"
 
-@interface BarLabel() 
-- (void) setUp;
-@end
+@implementation XMLParser
 
-@implementation BarLabel
-
-- (id) init
-{
-	self = [super init];
-	if (self) 
-	{
-		[self setUp];
-	}
-	return self;
-}
-
-- (id)initWithFrame:(CGRect)frame
-{
-	self = [super initWithFrame:frame];
-	if (self) 
-	{
-		[self setUp];
-	}
-	return self;
-}
-
-- (void) setUp
-{
-	self.backgroundColor = [UIColor clearColor];
-	self.textColor = [UIColor blackColor];
-	self.font = [UIFont boldSystemFontOfSize:13.0f];
-	self.textAlignment = UITextAlignmentCenter;
-	self.lineBreakMode = UILineBreakModeTailTruncation;
++ (XMLElement *) parse:(NSData *)data {
+	XmlParserDelegate *parserDelegate = [[XmlParserDelegate alloc] init];
+	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
+	[parser setDelegate:parserDelegate];
+	[parser parse];
+	XMLElement *root = [parserDelegate root];
+	return root;
 }
 
 @end

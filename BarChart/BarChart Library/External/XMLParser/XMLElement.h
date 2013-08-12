@@ -25,25 +25,24 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XMLElement : NSObject 
-{
+@interface XMLElement : NSObject  {
 	NSMutableArray *children;
 	NSMutableDictionary *attributes;
-	XMLElement *parent;
+	XMLElement *__unsafe_unretained parent;
 	NSString *name;
 	NSString *innerText;
 }
 
-@property (nonatomic, retain) NSMutableArray *children;
-@property (nonatomic, retain) NSMutableDictionary *attributes;
-@property (nonatomic, assign) XMLElement *parent;
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *innerText;
+@property (nonatomic, strong) NSMutableArray *children;
+@property (nonatomic, strong) NSMutableDictionary *attributes;
+@property (nonatomic, unsafe_unretained) XMLElement *parent;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *innerText;
 
 - initWithName:(NSString *)aname;
 - (bool) hasAttribute:(NSString *)name;
 - (NSString *) getAttribute:(NSString *)name;
-- (void) setAttribute:(NSString *)name value:(NSString *)value;
+- (void)setAttribute:(NSString *)name value:(NSString *)value;
 - (XMLElement *) getChild:(NSString *)childName;
 - (XMLElement *) appendElement:(NSString *)aname;
 - (XMLElement *) appendElement:(NSString *)aname withText:(NSString *)text;
