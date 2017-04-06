@@ -13,7 +13,7 @@ Follow these steps to add Bar Chart to your iOS App project in Xcode. Check the 
  5. Connect the Bar Chart View to your ViewController Class: `@property (strong, nonatomic) IBOutlet BarChartView *barChart;`
  6. Loading data into the Bar Chart can be done using an `XML file` or with an `NSArray`. Please refer to one of the sections below about loading data.
 
-##Loading Data with NSArray
+## Loading Data with NSArray
 Filling your Bar Chart with data from an NSArray is the easiest and most flexible way to setup and load data into a `BarChartView`. Bar Chart provides a simple method that properly formats and generates an `NSArray` for use with a Bar Chart. Here's how you can easily generate data for a Bar Chart:
 
     //Generate properly formatted data to give to the bar chart
@@ -40,15 +40,15 @@ It is important that all four attributes are present in each set, otherwise ther
 
 Once you create and format an XML file, you can then load it into a Bar Chart using the following method:
 
-    //Load the bar chart with a premade XML file in your app's bundle
+    // Load the bar chart with a pre-made XML file in your app's bundle
     [barChart setXmlData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"barChart" ofType:@"xml"]] showAxis:DisplayBothAxes withColor:[UIColor whiteColor] shouldPlotVerticalLines:YES];
 
 Note that you must give the XML File as an `NSData` object, not a file or file path.
 
-##Customizing Bar Chart
+## Customizing Bar Chart
 Customizing Bar Chart is easy. Bar Chart has three different types that allow for customization of the Bar Graph's Bars. More ways to customize Bar Chart are coming soon.
 
-###Bar Display Style
+### Bar Display Style
 Changes the visual appearance of the bars on the Bar Chart. There are three different styles available:  
   * **BarStyleGlossy**: Adds a glossy shine and shades the bars. This is the default value if no value is set.   
   * **BarStyleMatte**: Bars have shading but no gloss effects.  
@@ -56,20 +56,20 @@ Changes the visual appearance of the bars on the Bar Chart. There are three diff
 
 You can set the Bar Style using the following method. You should always call this method before you update or load your Bar Chart:
 
-    //Set the Style of the Bars (Glossy, Matte, or Flat) - Glossy is default
+    // Set the Style of the Bars (Glossy, Matte, or Flat) - Glossy is default
     [barChart setupBarViewStyle:BarStyleGlossy];
     
-###Bar Shape
+### Bar Shape
 Changes the shape of the bars on the Bar Chart. There are two different styles available:  
   * **BarShapeRounded**: Rounds the corners of the bars at the top. This is the default value if no value is set.   
   * **BarShapeSquared**: Bars are not rounded - they are rectangles.    
 
 You can set the Bar Shape using the following method. You should always call this method before you update or load your Bar Chart:
 
-    //Set the Shape of the Bars (Rounded or Squared) - Rounded is default
+    // Set the Shape of the Bars (Rounded or Squared) - Rounded is default
     [barChart setupBarViewShape:BarShapeRounded];
 
-###Bar Shadow
+### Bar Shadow
 Changes the visual appearance of the shadow behind the bars on the Bar Chart. There are three different shadow styles available:  
   * **BarShadowLight**: Bars have a light gray shadow with a slight blur and low opacity. This is the default value if no value is set.   
   * **BarShadowHeavy**: Bars have a dark and (relative compared to the light shadow) defined shadow.  
@@ -77,24 +77,24 @@ Changes the visual appearance of the shadow behind the bars on the Bar Chart. Th
 
 You can set the Bar Style using the following method. You should always call this method before you update or load your Bar Chart:
 
-    //Set the Drop Shadow of the Bars (Light, Heavy, or None) - Light is default
+    // Set the Drop Shadow of the Bars (Light, Heavy, or None) - Light is default
     [barChart setupBarViewShadow:BarShadowLight];
 
-##Compatibility Requirements
+## Compatibility Requirements
 Before using Bar Chart, make sure your project meets its requirements.  
  - Bar Chart works on iOS 4.2 and higher, however the sample project only runs on iOS 5.0 and higher.  
  - Bar Chart now uses Objective-C ARC. If your project does not use ARC, add the ARC flag to the **Bar Chart** files in your project's Compile Sources section: `-fobjc-arc`  
  - You must add the `CoreGraphics` and `QuartzCore` frameworks to your project   
 
-##To-Do
+## To-Do
 Bar Chart is a work in progress. We're planning to add these features soon:  
- [ ] Re-add animations to Bar Chart
- [x] Add ways to customize Bar Chart
- [ ] Add Stroke Effetcs Options to Bars
- [ ] Add more data options (ex. using `UIColor` rather than `HEX`)
- Think of anything else? Submit an issue!
+ - [ ] Re-add animations to Bar Chart  
+ - [x] Add ways to customize Bar Chart  
+ - [ ] Add Stroke Effetcs Options to Bars  
+ - [ ] Add more data options (ex. using `UIColor` rather than `HEX`)  
+Think of anything else? Submit an issue!  
 
-##Changelog
+## Changelog
 
 <table>
   <tr><th colspan="2" style="text-align:center;"><b>Version 3.0</b></th></tr>
@@ -128,8 +128,8 @@ Bar Chart is a work in progress. We're planning to add these features soon:
   </tr>
 </table>
 
-##License
-Copyright (c) 2012 Mezrin Kirill. Updated by iRare Media.
+## License
+Copyright (c) 2012 Mezrin Kirill. Updated by Sam Spencer.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
